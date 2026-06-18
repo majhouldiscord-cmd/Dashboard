@@ -6,3 +6,20 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Cache directories
+_DataURI/
+c.ba.contentsquare.net/
+cdn.jsdelivr.net/
+chat-reviver.com/
+esm.sh/
+fonts.googleapis.com/
+t.contentsquare.net/
+unpkg.com/
+www.googletagmanager.com/
+
+# Temporary files
+download-*.js
+fix-html.js
+reorganize.js
+server.js
