@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Premium - Dead Chat Reviver</title>
+	<meta
+		content="Revive your server with Dead Chat Reviver Premium! Unlock exclusive features like custom revive messages, multi-language support, and night mode. Elevate your Discord experience today."
+		name="description">
+	<meta
+		content="Discord bot, Chat Reviver, Premium features, Custom revive messages, Multi-language support, Night mode, Server enhancement, Active chat, Premium subscription, Discord community"
+		name="keywords">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#e07f80">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#202020">
+
+	<!-- discord usw. -->
+	<meta property="og:title" content="Premium - Dead Chat Reviver">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://chat-reviver.com/premium">
+	<meta property="og:image" content="https://i.ibb.co/wNFhHqJ/dcr.png">
+	<meta property="og:description"
+		content="Revive your server with Dead Chat Reviver Premium! Unlock exclusive features like custom revive messages, multi-language support, and night mode. Elevate your Discord experience today.">
+	<meta name="theme-color" content="#e07f80">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+	<link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+	<!-- Template Main CSS File -->
+	<link href="/assets/css/index.css" rel="stylesheet">
+	<link href="/assets/css/premium.css" rel="stylesheet">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XSLH8XCFL"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-4XSLH8XCFL');
+	</script>
+	<style>
+		#premiumHero-shape svg path {
+			fill: var(--bg-color);
+			transition: .3s;
+		}
+
+		.premiumHero {
+			padding-top: 7em !important;
+			height: 40em;
+		}
+
+		.header {
+			background: rgba(22, 23, 27, 0.7);
+		}
+
+		@media screen and (max-width: 767px) {
+			#premiumHero-priceCards {
+				top: -16em;
+			}
+
+			section.dashboard {
+				margin-top: -13em;
+			}
+		}
+
+		@media screen and (max-width: 576px) {
+			#premiumHero-priceCards {
+				top: -16em;
+				padding-top: 0px;
+				padding: 20px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top">
+	<div class="container-fluid container-lg d-flex align-items-center gap-3">
+
+		<a href="/" class="logo d-flex align-items-center scrollto">
+			<img src="/assets/img/dcr-logo.png" alt="">
+			<span>DCR</span>
+		</a>
+
+		<nav id="navbar" class="navbar">
+			<ul>
+				<div>
+					<li class="dropdown megamenu">
+						<a href="#" class="" title="Click to open">
+							<span>Resources</span>
+							<i class="bi bi-chevron-down toggle-dropdown"></i>
+						</a>
+						<ul class="dropdown-active">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-6">
+										<a href="/status" class="dropdown-item">
+											<i class="ri-base-station-line"></i>
+											<div>
+												<span>Status<br></span>
+												<span class="shortDescr">
+													View real-time bot and shard availability.
+												</span>
+											</div>
+										</a>
+										<a href="/help-center" class="dropdown-item">
+											<i class="ri-question-line"></i>
+											<div>
+												<span>Help Center<br></span>
+												<span class="shortDescr">
+													Browse our guides, FAQs, and tutorials.
+												</span>
+											</div>
+										</a>
+										<a href="/support" class="dropdown-item" target="_blank">
+											<i class="ri-discord-line"></i>
+											<div>
+												<span>Discord Server<br></span>
+												<span class="shortDescr">
+													Join our server for direct support and updates.
+												</span>
+											</div>
+										</a>
+									</div>
+									<div class="col-lg-6">
+										<a href="/#commands" class="dropdown-item">
+											<i class="ri-code-s-slash-line"></i>
+											<div>
+												<span>Commands<br></span>
+												<span class="shortDescr">
+													Discover more about what the bot can do.
+												</span>
+											</div>
+										</a>
+										<a href="https://top.gg/bot/887293151998529576/vote" class="dropdown-item"
+											target="_blank">
+											<i class="ri-check-double-line"></i>
+											<div>
+												<span>Vote on top.gg<br></span>
+												<span class="shortDescr">
+													Show support by voting for the bot on top.gg.
+												</span>
+											</div>
+										</a>
+										<a href="/donate" class="dropdown-item"
+											target="_blank">
+											<i class="ri-check-double-line"></i>
+											<div>
+												<span>Donate<br></span>
+												<span class="shortDescr">
+													Help cover hosting and development costs.
+												</span>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</ul>
+					</li>
+					<li>
+						<a class="nav-link" href="/premium">
+							<i class="dcr-icons premium-icon ms-2 ms-lg-0 me-0 me-lg-2 mb-1 order-1 order-lg-0"></i>
+							<span class="order-0 order-lg-1">Premium</span>
+						</a>
+					</li>
+				</div>
+				<div>
+					<li><a class="nav-link" href="/login/auth">Dashboard</a></li>
+					<li><a class="btn btn-white ms-lg-4 me-lg-0 my-lg-0 mx-3 my-3" href="/invite" target="_blank">Invite
+							Bot <i class="ri-arrow-right-up-line text-black"></i></a></li>
+				</div>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		</nav><!-- .navbar -->
+
+	</div>
+</header><!-- End Header -->
+
+		<main id="main" class="main mt-0">
+
+			<div class="premiumHero text-center p-5">
+				<div class="mt-5">
+					<h1 class="display-2" style="font-weight: 600;" data-aos="fade-up">Simple, fair pricing.</h1>
+					<p data-aos="fade-up" data-aos-delay="100">Unlock the full potential of your experience with our
+						Premium version.</p>
+				</div>
+			</div>
+
+			<div class="position-relative" data-aos="fade-up" data-aos-delay="200">
+				<div class="shape shape-bottom shape-fluid-x" id="premiumHero-shape">
+					<svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill=""></path>
+					</svg>
+				</div>
+			</div>
+
+			<div class="container prices" id="premiumHero-priceCards">
+				<div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+					<div class="col-lg-4 col-md-6">
+						<div class="card h-100">
+							<div class="card-body p-0 w-100 mx-auto text-center"
+								style="display: flex;flex-direction: column;justify-content: space-between;">
+								<h3>Basic</h3>
+								<div class="display-4 fw-bold">0€</div>
+								<div class="mb-4 text-secondary">per month</div>
+								<p class="mb-4 pb-4 fst-italic">Allows you to use all the basic features.</p>
+								<a class="btn btn-light btn-rounded w-100 py-3" href="/invite" target="_blank">Start for
+									Free</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card h-100">
+							<div class="card-body p-0 w-100 mx-auto text-center"
+								style="display: flex;flex-direction: column;justify-content: space-between;">
+								<h3><i class="dcr-icons premium-icon glow"></i> Premium</h3>
+								<div class="display-4 fw-bold accentHighlight">3,99€</div>
+								<div class="mb-4 text-secondary">per month</div>
+								<p class="mb-4 pb-4 fst-italic">Gives you full access to <b>AI features</b>, infinite custom topics and more.</p>
+								<a class="btn btn-design w-100 py-3" href="/premium/redirect/checkout/1"
+									target="_blank">Go Premium</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 mx-auto">
+						<div class="card h-100">
+							<div class="card-body p-0 w-100 mx-auto text-center"
+								style="display: flex;flex-direction: column;justify-content: space-between;">
+								<h3><i class="dcr-icons premium-icon glow"></i> Premium Plus</h3>
+								<div class="display-4 fw-bold">9,99€</div>
+								<div class="mb-4 text-secondary">per month</div>
+								<p class="mb-4 pb-4 fst-italic">Extends Premium benefits across <b>three
+										servers</b>.</p>
+								<a class="btn btn-light btn-rounded w-100 py-3" href="/premium/redirect/checkout/2"
+									target="_blank">Go Premium Plus</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="section dashboard">
+				<div class="container prices mb-4">
+
+					<div class="row premiumSection">
+						<header class="section-header">
+							<h2>Plan Comparison</h2>
+							<p>Choose Your Ideal Plan</p>
+						</header>
+						<div class="overflow-auto" data-aos="fade-up" data-aos-delay="200">
+							<table class="table-design">
+								<thead>
+									<tr>
+										<th>Features</th>
+										<th>Basic</th>
+										<th>Premium</th>
+										<th>Elite</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Change Bot Language</td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Nightmode <i class="bi bi-info-circle"
+												data-tippy-bottom-content='Prevent Chat Revivals during sleep hours'></i>
+										</td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Removed Ads</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Customize Revive Messages</td>
+										<td><i class="bi bi-dash-lg text-warning"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Custom Topics <i class="bi bi-info-circle"
+												data-tippy-bottom-content='Create limitless Topic Collections with questions for unique Conversation Starters'></i>
+										</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>
+											Create with AI <i class="dcr-icons ai-icon"></i> 
+											<i class="bi bi-info-circle" 
+												data-tippy-bottom-content="Use AI to generate conversation starters matching your server's theme"></i>
+										</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Max. Revive Channel</td>
+										<td>10</td>
+										<td>10</td>
+										<td>10</td>
+									</tr>
+									<tr>
+										<td>Advanced Analytics <i class="bi bi-info-circle"
+												data-tippy-bottom-content='Track 30 days of Server Activity, including Message and Revive Metrics'></i>
+										</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Special Role</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+									<tr>
+										<td>Up to 3 Servers</td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-x-lg text-danger"></i></td>
+										<td><i class="bi bi-check-lg text-success"></i></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="row premiumSection premium-testimonials">
+						<header class="section-header">
+							<h2>Testimonials</h2>
+							<p>Feedback from Our Premium Members</p>
+						</header>
+
+						<div class="premium-testimonials-slider swiper mx-auto" data-aos="fade-up" data-aos-delay="200">
+							<div class="swiper-wrapper mx-auto">
+
+								<div class="swiper-slide">
+									<div class="testimonial-item row">
+										<div class="col-lg-4 p-0">
+											<div class="profile h-100">
+												<img loading="lazy"
+													src="https://ui-avatars.com/api/?length=1&name=PopsicleEmperor&background=264653&color=fff"
+													class="testimonial-img" alt="">
+												<h3>PopsicleEmperor</h3>
+												<h4>via Discord</h4>
+											</div>
+										</div>
+										<div class="col-lg-8 p-0 my-auto">
+											<div class="stars">
+												<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i>
+											</div>
+											<p>
+												“The ability to customize and personalize the questions and/or prompts
+												has helped bolster our feeling of community on our server! It has
+												brought a lot of joy and more organic conversations to our server
+												chats!“
+											</p>
+										</div>
+									</div>
+								</div><!-- End testimonial item -->
+
+								<div class="swiper-slide">
+									<div class="testimonial-item row">
+										<div class="col-lg-4 p-0">
+											<div class="profile h-100">
+												<img loading="lazy"
+													src="https://ui-avatars.com/api/?length=1&name=Kai&background=f4a261&color=fff"
+													class="testimonial-img" alt="">
+												<h3>Kai, the Artsy Moutter</h3>
+												<h4>via Discord</h4>
+											</div>
+										</div>
+										<div class="col-lg-8 p-0 my-auto">
+											<div class="stars">
+												<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i>
+											</div>
+											<p>
+												“I am loving the DCR! The custom questions are very helpful.
+												[...]
+												<!-- I have
+														noticed a bit that it's not as random as I was thinking it would be. It felt like it
+														favored a few responses more than the others, and we never saw some of them. -->
+												It could just use a bit more randomness in its question posts.
+												Otherwise,
+												it's very good.“
+											</p>
+										</div>
+									</div>
+								</div><!-- End testimonial item -->
+
+								<div class="swiper-slide">
+									<div class="testimonial-item row">
+										<div class="col-lg-4 p-0">
+											<div class="profile h-100">
+												<img loading="lazy"
+													src="https://ui-avatars.com/api/?length=1&name=Kai&background=2a9d8f&color=fff"
+													class="testimonial-img" alt="">
+												<h3>Ken Guy</h3>
+												<h4>via Discord</h4>
+											</div>
+										</div>
+										<div class="col-lg-8 p-0 my-auto">
+											<div class="stars">
+												<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i>
+											</div>
+											<p>
+												“Being able to create more or larger lists is definitely helpful in
+												being able to customize, curate, and control what the bot is asking,
+												when, and where, to keep the revives on topic and not too frequent or
+												infrequent.“
+											</p>
+										</div>
+									</div>
+								</div><!-- End testimonial item -->
+
+								<div class="swiper-slide">
+									<div class="testimonial-item row">
+										<div class="col-lg-4 p-0">
+											<div class="profile h-100">
+												<img loading="lazy"
+													src="https://ui-avatars.com/api/?length=1&name=Kai&background=e76f51&color=fff"
+													class="testimonial-img" alt="">
+												<h3>Kai, the Artsy Moutter</h3>
+												<h4>via Discord</h4>
+											</div>
+										</div>
+										<div class="col-lg-8 p-0 my-auto">
+											<div class="stars">
+												<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+													class="bi bi-star-fill"></i>
+											</div>
+											<p>
+												“I am loving the DCR! The custom questions are very helpful.
+												[...]
+												<!-- I have
+														noticed a bit that it's not as random as I was thinking it would be. It felt like it
+														favored a few responses more than the others, and we never saw some of them. -->
+												It could just use a bit more randomness in its question posts.
+												Otherwise,
+												it's very good.“
+											</p>
+										</div>
+									</div>
+								</div><!-- End testimonial item -->
+
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+
+					<div class="premiumSection pt-5 faq">
+						<div class="row gy-4">
+
+							<div class="col-lg-4">
+								<div class="content faq-header">
+									<h2>Any questions? Check out the FAQ</h2>
+									<p>
+										Discover FAQs about premium membership. For more questions, visit our Support
+										Server's dedicated channel.
+									</p>
+								</div>
+							</div>
+
+							<div class="col-lg-8">
+
+								<div class="accordion accordion-flush" id="faqlist" data-aos="fade-up"
+									data-aos-delay="200">
+
+									<div class="accordion-item">
+										<h3 class="accordion-header">
+											<button class="accordion-button" type="button" data-bs-toggle="collapse"
+												data-bs-target="#faq-content-1">
+												Are premium features tied to a specific server?
+											</button>
+										</h3>
+										<div id="faq-content-1" class="accordion-collapse collapse show"
+											data-bs-parent="#faqlist">
+											<div class="accordion-body">
+												Yes, premium features are server-specific. To use them across
+												multiple servers,
+												you'll need to purchase the 3-Server Premium version.
+											</div>
+										</div>
+									</div>
+
+									<div class="accordion-item">
+										<h3 class="accordion-header">
+											<button class="accordion-button collapsed" type="button"
+												data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+												What occurs after purchasing the premium version?
+											</button>
+										</h3>
+										<div id="faq-content-2" class="accordion-collapse collapse"
+											data-bs-parent="#faqlist">
+											<div class="accordion-body">
+												To activate your premium membership for a chosen server, join the
+												support server
+												and use <span class="code-design code-command">premium</span>. If you
+												encounter activation issues,
+												contact the
+												support team
+												through a message in <span class="code-design code-channel">help</span>
+												on the <a target="_blank"
+													href="https://chat-reviver.com/support">support server</a>.
+											</div>
+										</div>
+									</div>
+
+									<div class="accordion-item">
+										<h3 class="accordion-header">
+											<button class="accordion-button collapsed" type="button"
+												data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+												Are the payment transactions secure?
+											</button>
+										</h3>
+										<div id="faq-content-3" class="accordion-collapse collapse"
+											data-bs-parent="#faqlist">
+											<div class="accordion-body">
+												Absolutely, payments are securely processed by <a target="_blank"
+													href="https://patreon.com">Patreon</a>, ensuring a safe and
+												reliable
+												transaction experience.
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+		</main><!-- End #main -->
+
+		<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+	<div class="footer-top">
+		<div class="container">
+			<div class="row gy-4">
+				<div class="col-lg-5 col-md-12 footer-info">
+					<a href="/" class="logo d-flex align-items-center">
+						<img src="/assets/img/dcr-logo.png" alt="">
+						<span>Dead Chat Reviver</span>
+					</a>
+					<p>
+						admin@dcr.poldisweb.de <br>
+						support@poldisweb.de <br>
+						business@poldisweb.de
+					</p>
+				</div>
+
+				<div class="col-lg-2 col-6 footer-links">
+					<h4>Useful Links</h4>
+					<ul>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/invite?utm_source=footer">
+								Invite Bot <i class="ri-arrow-right-up-line"></i>
+							</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/support">
+								Support Server <i class="ri-arrow-right-up-line"></i>
+							</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i> <a class="scrollto" href="/#commands">Commands</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i> <a class="scrollto" href="/help-center">Help Center</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-6 footer-links">
+					<h4>Find us online</h4>
+					<ul>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="https://top.gg/bot/887293151998529576">top.gg <i
+									class="ri-arrow-right-up-line"></i></a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank"
+								href="https://discord.com/application-directory/887293151998529576">discord.com <i
+									class="ri-arrow-right-up-line"></i></a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank"
+								href="https://discordbotlist.com/bots/dead-chat-reviver">discordbotlist.com <i
+									class="ri-arrow-right-up-line"></i></a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="https://discord.bots.gg/bots/887293151998529576">discord.bots.gg <i
+									class="ri-arrow-right-up-line"></i></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-6 footer-links">
+					<h4>Legal</h4>
+					<ul>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/legal/guidelines">Guidelines</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/legal/privacy">Privacy policy</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/legal/tos">Terms of Service</a>
+						</li>
+						<li>
+							<i class="bi bi-chevron-right"></i>
+							<a target="_blank" href="/legal/impressum">Impressum</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="copyright">
+			&copy; Copyright <strong><span>PoldisWeb</span></strong>. All Rights Reserved
+		</div>
+	</div>
+</footer><!-- End Footer -->
+
+			<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+					class="bi bi-arrow-up-short"></i></a>
+
+
+			<!-- Template Main JS File -->
+			<!-- Vendor JS Files -->
+
+			<script src="https://unpkg.com/@popperjs/core@2"></script>
+			<script src="https://unpkg.com/tippy.js@6"></script>
+			<script src="/assets/vendor/aos/aos.js"></script>
+			<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+			<script src="/assets/js/cookie-consent.js" type="module"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+
+			<!-- Template Main JS File -->
+			<script src="/assets/js/index.js"></script>
+			<script>
+				$(document).ready(() => {
+					const swiper = new Swiper(".premium-testimonials-slider", {
+						loop: true,
+						autoplay: {
+							delay: 5000,
+							disableOnInteraction: false,
+						},
+						navigation: false,
+						pagination: {
+							el: '.swiper-pagination',
+							type: 'bullets',
+							clickable: true
+						},
+						mousewheel: false,
+						keyboard: true,
+						slidesPerView: 1,
+						speed: 700,
+						effect: "slide",
+						grabCursor: true,
+						spaceBetween: 100,
+					});
+
+					tippy('[data-tippy-content]', {
+						theme: 'custom',
+					});
+					tippy('[data-tippy-bottom-content]', {
+						content: (reference) => reference.dataset.tippyBottomContent,
+						theme: 'custom',
+						placement: 'bottom',
+					});
+				});
+			</script>
+</body>
+
+</html>

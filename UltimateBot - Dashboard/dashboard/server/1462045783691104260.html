@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Home - Dashboard - Dead Chat Reviver</title>
+	<meta content="" name="description">
+	<meta content="dashboard, chat reviver, dead chat reviver, discord, discord bot, bot" name="keywords">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#e07f80">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#202020">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XSLH8XCFL"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-4XSLH8XCFL');
+	</script>
+
+	<!-- Template Main CSS File -->
+	<link href="/assets/css/dash.css" rel="stylesheet">
+	<style>
+		.item-controls .bi.bi-circle,
+		.item-controls .bi.bi-three-dots {
+			color: #6c757d !important;
+			cursor: not-allowed !important;
+			pointer-events: none !important;
+		}
+
+		.uncheck {
+			color: #6c757d !important;
+			cursor: not-allowed !important;
+			pointer-events: none !important;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="header" class="header fixed-top d-flex align-items-center">
+
+	<div class="d-flex align-items-center justify-content-between">
+		<span class="px-2 cursor-pointer expand-sidebar-btn d-flex d-none" data-tippy-bottom-content="Expand Sidebar">
+			<i class='bx bx-chevron-right fs-3'></i>
+		</span>
+		<i class="bi bi-list toggle-sidebar-btn d-block d-xxl-none" id="toggle-sidebar-btn"></i>
+		<a href="/dashboard/0" class="logo d-flex align-items-center d-xxl-none">
+			<img src="/assets/img/dcr-logo.png" alt="">
+			<span class="d-none d-lg-block logo-text">DCR</span>
+		</a>
+	</div><!-- End Logo -->
+
+	<nav class="header-nav ms-auto">
+		<ul class="d-flex align-items-center">
+			<li class="nav-item dropdown me-1">
+
+				<a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="dropdown" id="themeChange">
+					<i class='bx bx-palette'></i>
+				</a>
+
+				<ul class="dropdown-menu dropdown-menu-end theme-picker">
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between active" href="#" onclick="changeTheme('dark')" id="themeDark">
+							<span><i class="bx bx-moon"></i> Dark</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between" href="#" onclick="changeTheme('light')" id="themeLight">
+							<span><i class="bx bx-sun"></i> Light</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between" href="#" onclick="changeTheme('auto')" id="themeAuto">
+							<span><i class="bx bx-brightness-half"></i> System</span>
+						</a>
+					</li>
+
+				</ul>
+			</li>
+
+			<li class="nav-item dropdown pe-3">
+
+				<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+					<img src="https://cdn.discordapp.com/avatars/1449374258873503796/eba6c0e75ad5e1221a8b9dfea57080e8.png" alt="Profile"
+						class="rounded-circle">
+					<span class="d-none d-md-flex align-items-center ps-2">
+						majhoul.gg <i class='bx bx-chevron-down'></i>
+					</span>
+				</a><!-- End Profile Iamge Icon -->
+
+				<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+					<li class="dropdown-header d-flex align-items-center px-3">
+						<div class="me-3">
+							<img src="https://cdn.discordapp.com/avatars/1449374258873503796/eba6c0e75ad5e1221a8b9dfea57080e8.png" alt="Profile">
+						</div>
+
+						<div class="d-flex flex-column text-start">
+							<h6>
+								majhoul.gg
+							</h6>
+
+							<span class="fw-semibold">
+								1449374258873503796
+							</span>
+						</div>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/user/1449374258873503796">
+							<span>My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center"
+							href="/dashboard/user/1449374258873503796/settings">
+							<span>My Settings</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/0">
+							<span>My Servers</span>
+						</a>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/premium">
+							<span>Premium <i class="dcr-icons premium-icon"></i></span>
+						</a>
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/help-center" target="_blank">
+							<span>Help Center</span>
+						</a>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/logout">
+							<span>Sign Out</span>
+						</a>
+					</li>
+
+				</ul><!-- End Profile Dropdown Items -->
+			</li><!-- End Profile Nav -->
+		</ul>
+	</nav><!-- End Icons Navigation -->
+
+</header>
+
+<script>
+	const setActive = (theme) => {
+		if (theme == "dark") {
+			document.getElementById('themeDark').classList.add('active');
+			document.getElementById('themeLight').classList.remove('active');
+			document.getElementById('themeAuto').classList.remove('active');
+		} else if (theme == "light") {
+			document.getElementById('themeDark').classList.remove('active');
+			document.getElementById('themeLight').classList.add('active');
+			document.getElementById('themeAuto').classList.remove('active');
+		} else {
+			document.getElementById('themeDark').classList.remove('active');
+			document.getElementById('themeLight').classList.remove('active');
+			document.getElementById('themeAuto').classList.add('active');
+		}
+	}
+
+	const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+	if (currentTheme) {
+		if (currentTheme != "auto") {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+			setActive(currentTheme);
+		} else {
+			setActive("auto");
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-theme', "dark");
+			} else {
+				document.documentElement.setAttribute('data-theme', "light");
+			}
+		}
+	}
+
+	const changeTheme = (theme) => {
+		localStorage.setItem('theme', theme);
+		if (theme != "auto") {
+			document.documentElement.setAttribute('data-theme', theme);
+			setActive(theme);
+		} else {
+			setActive("auto");
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-theme', "dark");
+			} else {
+				document.documentElement.setAttribute('data-theme', "light");
+			}
+		}
+	}
+</script>
+		<aside id="sidebar" class="sidebar d-flex flex-column overflow-hidden pt-3 px-1">
+
+	<div class="d-none d-xxl-flex align-items-center justify-content-between text-center" style="margin-left: calc(1rem + 15px);">
+		<a href="/dashboard/0" class="logo d-flex align-items-center mb-4 ms-1" style="width: fit-content;">
+			<img src="/assets/img/dcr-logo.png" alt="">
+			<span class="d-none d-lg-block logo-text">DCR</span>
+		</a>
+
+		<span class="px-2 mb-4 cursor-pointer collapse-sidebar-btn" style="border-left: 1px solid var(--line-grey);" data-tippy-bottom-content="Collapse Sidebar">
+			<i class='bx bx-chevron-left fs-3'></i>
+		</span>
+	</div><!-- End Logo -->
+
+	<div class="overflow-x-hidden overflow-y-auto px-3 h-100" style="transform: scaleX(-1);">
+		<div class="h-100 d-flex flex-column justify-content-between" style="transform: scaleX(-1);">
+			<div class="flex-column-fluid">
+				<ul class="sidebar-nav pb-2" id="sidebar-nav">
+
+					<li class="nav-heading">Dashboard</li>
+
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#" data-bs-toggle="dropdown" id="selectServerBtn">
+							<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar"
+								class="selectServerAvatar" id="selectServerCurrentAvatar">
+							<span id="selectServerCurrentName">Change Server</span> 
+							<i class='bx bx-chevron-down'></i> 
+						</a>
+
+						<ul class="dropdown-menu selectServerDropdown" id="selectServerDropdown">
+
+							<li class="mb-0 pe-none" id="selectServerLoader">
+								<a class="dropdown-item d-flex align-items-center justify-content-between">
+									<img src="https://chat-reviver.com/assets/img/loading.png" alt="" width="70px"
+										class="mx-auto py-4">
+								</a>
+							</li>
+
+						</ul>
+					</li>
+
+					<li class="nav-item" id="home">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/1462045783691104260">
+							<i class="bx bx-home-alt-2"></i>
+							<span>Home</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="settings">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/1462045783691104260/settings">
+							<i class="bx bx-slider-alt"></i>
+							<span>Bot Settings</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="revives">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/1462045783691104260/revives">
+							<i class="bx bx-message-bubble-heart"></i>
+							<span>Revives</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="topics">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/1462045783691104260/topics">
+							<i class="bx bx-message-bubble-captions"></i>
+							<span class="position-relative" id="topicsText">
+								Topics <span class="badge badge-sm ms-1" style="background: var(--ai-gradient-btn)">AI</span>
+							</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="analytics">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/1462045783691104260/analytics">
+							<i class="bx bx-pie-chart-alt"></i>
+							<span>Analytics</span>
+						</a>
+					</li>
+
+					<li class="nav-heading">Support</li>
+
+					<li class="nav-item" id="faq">
+						<a class="nav-link collapsed" href="/help-center/faqs">
+							<i class="bx bx-help-circle"></i>
+							<span>FAQs</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="tutorials">
+						<a class="nav-link collapsed" href="/help-center/guides">
+							<i class="bx bx-book-bookmark"></i>
+							<span>Guides & Resources</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="/support" target="_blank">
+							<i class="bx bx-community"></i>
+							<span>Support Server</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 
+				<div class="flex-column-auto">
+					<div class="card position-relative border-0" style="background-color: var(--bg-color);">
+						<div class="card-body">
+							<div class="card-title fs-5">Let's Upgrade to Premium <i class="dcr-icons premium-icon"></i>
+							</div>
+							Enhance your experience with Premium. <br><br>
+							<a href="/premium/redirect" target="_blank" class="btn btn-design w-100">Upgrade</a>
+						</div>
+					</div>
+				</div>
+				 -->
+
+				<div class="flex-column-auto">
+					<div class="card position-relative border-0" style="background-color: var(--bg-color);">
+						<div class="card-body">
+							<div class="card-title fs-5">
+                                We Need Your Help!
+                            </div>
+							Help shape the next era of DCR. <br><br>
+							<a href="https://forms.gle/6xrGMPsvhr4wLeUg7" target="_blank" class="btn btn-design w-100">1min Survey</a>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+</aside>
+<div id="overlay"></div>
+
+
+<script>
+	if (document.getElementById('shareFeedback')) {
+		document.getElementById('shareFeedback').addEventListener('click', async () => {
+			const rating = document.querySelector('#survey-card input[name="options"]:checked').id.replace('option', '');
+
+			const answer = await fetch('/api/endpoints/surveys/1', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					answer1: rating,
+				})
+			});
+
+			const { success, msg } = await answer.json();
+
+			if (success == false && msg != "You've already cast your vote in this survey.") {
+				return alert(msg);
+			}
+
+			document.getElementById('survey-card').style.display = 'none';
+			document.getElementById('thanks-survey-msg').innerText = msg;
+			if (!success) document.getElementById('thanks-survey-msg').classList.add('text-danger');
+			document.getElementById('thanks-survey').style.display = 'block';
+		});
+	}
+</script>
+
+			<div class="modal fade" id="onboardingModal" tabindex="-1" aria-labelledby="onboardingModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+		<div class="modal-content bg-dark modal-design">
+			<div class="modal-body text-center">
+				<div class="onboarding-container">
+					<div class="onboarding">
+						<div class="p-3">
+							<h3 class="mb-4">Welcome to <span class="fw-bold accentHighlight">Dead Chat
+									Reviver</span>!</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4 d-flex align-items-center justify-content-center">
+									<img src="null" data-src="/assets/img/onboarding/onboarding.svg"
+										alt="Illustration" width="400" class="tns-lazy-img rounded-2 img-fluid"
+										style="max-height: 235px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									<h5 class="mb-4">Spend a moment discovering the capabilities of this Bot</h5>
+									<div class="d-flex align-items-center mb-3">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-chat-heart"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Revive Messages
+											</h5>
+										</div>
+									</div>
+									<div class="d-flex align-items-center mb-3">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-translate"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Multi-Language
+											</h5>
+										</div>
+									</div>
+									<div class="d-flex align-items-center">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-pencil"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Fully Customizable
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-4">Breathe New Life into Your Servers</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4">
+									<img src="null" data-src="/assets/img/onboarding/create-revive.gif"
+										width="400" class="tns-lazy-img rounded-2 img-fluid" style="max-height: 225px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									To set up your initial revive, navigate to the <b>Revives Section</b> and select
+									<b>"Add
+										New"</b>.
+									<br><br>
+									For detailed guidance on setting up your first revive, consult the article
+									"Setting up Your First Revive Channel". <br>
+									<a href="/help-center/guides/guide/4" class="btn btn-cancel mt-2">Help Center
+										Article <i class="bi bi-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-4">Language Preferences for a Global Audience</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4">
+									<img src="null" data-src="/assets/img/onboarding/change-language.gif"
+										width="400px" class="tns-lazy-img rounded-2 img-fluid"
+										style="max-height: 225px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									To modify the bot's language, navigate to the <b>Bot Settings tab</b>, choose
+									your
+									preferred language, and click the <b>"Save"</b> button.
+									<br><br>
+									For detailed guidance on setting the bot's language, consult the article
+									"Setting the
+									Language". <br>
+									<a href="/help-center/guides/guide/3" class="btn btn-cancel mt-2">Help Center
+										Article <i class="bi bi-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-4">Explore More Features</h3>
+							<div class="row text-start mx-xl-5">
+								<div class="col-lg-6">
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Customize Revive Messages</h5>
+											<a href="/help-center/guides/guide/8" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Custom Topics</h5>
+											<a href="/help-center/guides/guide/9" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-6 mb-4">
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Nightmode</h5>
+											<a href="/help-center/guides/guide/7" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Analytics</h5>
+											<a href="/help-center/guides" class="btn btn-cancel">Read more <i
+													class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-1">Upgrade Your Plan</h3>
+							<div class="text-secondary mb-4">Unlock the full potential of your experience with our
+								Premium version.</div>
+							<div class="row text-start mx-xl-5">
+								<div class="col-lg-6 mb-4 align-items-center justify-content-center order-lg-0 order-1">
+									<img data-src="/assets/img/launch.svg" alt="Illustration"
+										class="tns-lazy-img rounded-2 img-fluid" width="400px"
+										style="max-height: 272px;">
+								</div>
+
+								<div class="col-lg-6 mb-4 order-lg-1 order-0">
+									<h4 class="fw-semibold pb-1">What’s in <span class="accentHighlight">Premium
+											Plan</span>?</h4>
+									<div class="p-4 rounded-4" style="background: var(--bg-color)">
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Create <span class="accentHighlight fw-bold">Custom Topics</span>
+												for a Unique Touch
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Remove Any Ads Distractions
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												<span class="accentHighlight fw-bold">Personalize Revive
+													Messages</span> with Custom
+												Content
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Access <span class="accentHighlight fw-bold">Advanced
+													Analytics</span> Features
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex">
+											<span class="flex-grow-1">
+												Gain a Special Role on the Support Server
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-cancel d-none" id="prev">Back</button>
+				<button class="btn btn-design" id="next">Let's Start <i class="bi bi-arrow-right-short"></i></button>
+				<a href="#" class="link-secondary ms-2" onclick="endOnboarding()">Skip Tutorial</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+				<main id="main" class="main">
+
+					<div class="pagetitle">
+						<h1>Home</h1>
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">Server</li>
+								<li class="breadcrumb-item server-name">
+									<a href="/dashboard/server/1462045783691104260">
+										Blitz
+									</a>
+								</li>
+								<li class="breadcrumb-item active">Home</li>
+							</ol>
+						</nav>
+					</div><!-- End Page Title -->
+
+					<section class="section dashboard">
+						<div class="row">
+
+							<!-- Left side columns -->
+							<div class="col-xl-6 col-md-12">
+								<div class="row">
+									<!-- Change Server Card -->
+									<div class="col-md-12">
+										<div class="card info-card sales-card">
+	<div class="card-body">
+		<span style="padding: 20px"></span>
+		<div class="d-flex align-items-center">
+			<div class="avatar">
+				<img src="https://cdn.discordapp.com/icons/1462045783691104260/049c216afe686cd76aeeba1ac18880b8.webp?size=1024" alt="Server Avatar" class="server-avatar">
+			</div>
+			<div class="ps-3">
+				<a href="/dashboard/server/1462045783691104260" class="changeServerLink">
+					<h6 class="server-name">Blitz</h6>
+				</a>
+				<a href="/dashboard/0" class="white-a" style="font-size: small;">
+					<i class="bi bi-arrow-repeat"></i>
+					Change Server
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+									</div><!-- End Change Server Card -->
+								</div>
+
+								<div class="row">
+									<!-- Suggestions Card -->
+									<div class="col-sm-6">
+										<div class="h-100 pb-4">
+											<div class="h-100 card recent-sales">
+												<div class="card-body suggestions-body">
+													<h5 class="card-title">
+														<!-- <span class="icon-wrapper" data-tippy-content="Magic!">
+												<i class="bi bi-stars"></i>
+											</span> -->
+														Suggestions
+													</h5>
+													<div class="suggestions">
+														
+															<div>
+																<img src="null" data-src="/assets/img/account.svg"
+																	class="tns-lazy-img" width="200px" height="121.8px">
+
+																<h4 class="mt-3 mb-3">Create your initial Revive Message
+																	Channel</h4>
+																<a href="/dashboard/server/1462045783691104260/revives"
+																	class="btn btn-cancel">Start with Revives <i
+																		class="bi bi-arrow-right"></i></a>
+															</div>
+															
+																<div>
+																	<img src="null" data-src="/assets/img/analytics.svg"
+																		class="tns-lazy-img" width="200px"
+																		height="121.8px">
+
+																	<h4 class="mt-3 mb-3">Monitor Your Server's Activity
+																	</h4>
+																	<a href="/dashboard/server/1462045783691104260/analytics"
+																		class="btn btn-cancel">Explore Analytics <i
+																			class="bi bi-arrow-right"></i></a>
+																</div>
+																<div>
+																	<img src="null" data-src="/assets/img/world.svg"
+																		class="tns-lazy-img" width="200px"
+																		height="143.33px">
+
+																	<h4 class="mt-3 mb-3">Personalize the Bot's Language
+																	</h4>
+																	<a href="/dashboard/server/1462045783691104260/settings"
+																		class="btn btn-cancel">Adjust Bot Settings <i
+																			class="bi bi-arrow-right"></i></a>
+																</div>
+																<div>
+																	<img src="null" data-src="/assets/img/pancakes.svg"
+																		class="tns-lazy-img" width="200px"
+																		height="121.8px">
+
+																	<h4 class="mt-3 mb-3">Tailor the content of your
+																		Revive Messages</h4>
+																	<a href="/dashboard/server/1462045783691104260/revives/custom"
+																		class="btn btn-cancel">Customize Your Messages
+																		<i class="bi bi-arrow-right"></i></a>
+																</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- End Suggestions Card -->
+
+									<!-- Stats Card -->
+									<div class="col-sm-6">
+										<div class="h-50 pb-4">
+											<div class="h-100 card info-card revenue-card mb-0">
+												<div
+													class="card-body d-flex justify-content-between align-items-start flex-column">
+													<h5 class="card-title m-0">Revive Messages sent</h5>
+
+													<div class="d-flex align-items-center">
+														<div
+															class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+															<i class="bi bi-chat-heart"></i>
+														</div>
+														<div class="ps-3">
+															<h6>
+																0
+															</h6>
+														</div>
+													</div>
+
+													<div></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="h-50 pb-4">
+											<div class="h-100 card info-card revenue-card mb-0">
+												<div
+													class="card-body d-flex justify-content-between align-items-start flex-column">
+													<h5 class="card-title m-0">Commands Used</h5>
+
+													<div class="d-flex align-items-center">
+														<div
+															class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+															<i class="bi bi-command"></i>
+														</div>
+														<div class="ps-3">
+															<h6>
+																0
+															</h6>
+														</div>
+													</div>
+
+													<div></div>
+												</div>
+											</div>
+										</div>
+									</div><!-- End Stats Card -->
+								</div>
+
+								<div class="row">
+									<!-- Revive Channel -->
+									<div class="col-12">
+										<div class="card recent-sales">
+											<div class="card-body">
+												<div class="pb-3 row row-fit align-items-center"
+													style="padding-top:20px;">
+													<span class="col ps-0">
+														<h5 class="p-0 m-0 card-title">Revive Channel</h5>
+														<span class="p-0 small text-secondary">
+															View and manage your Revive Channel settings
+														</span>
+													</span>
+
+													<span class="col-auto" style="float: right;display: contents;">
+														<a href="/dashboard/server/1462045783691104260/revives"
+															class="btn btn-design"
+															style="padding: 8px 16px !important;">
+															Manage
+														</a>
+													</span>
+												</div>
+
+												
+														<div class="pt-2 text-center">
+															<img src="/assets/img/nothing-here.svg"
+																style="width: 12em;">
+															<div class="mt-4">
+																<h4>Nothing here... yet!</h4>
+															</div>
+														</div>
+														
+											</div>
+
+										</div>
+									</div><!-- End Revive Channel -->
+
+									<!-- Custom Topics -->
+									<div class="col-12">
+										<div class="card recent-sales overflow-auto" style="position: static;">
+											<div class="card-body">
+												<div class="card-content">
+													<div class="pb-3 row row-fit align-items-center"
+														style="padding-top:20px;">
+														<span class="col ps-0">
+															<h5 class="p-0 m-0 card-title">Topic Collections</h5>
+															<span class="p-0 small text-secondary">
+																View and manage your Topic Collections
+															</span>
+														</span>
+
+														<span class="col-auto" style="float: right;display: contents;">
+															<a href="/dashboard/server/1462045783691104260/topics"
+																class="btn btn-design"
+																style="padding: 8px 16px !important;">
+																Manage
+															</a>
+														</span>
+													</div>
+
+													<div class="collections mt-2 row row-fit viewListGrid">
+														
+															<div class="item-container col-md-6">
+																<div
+																	class="item item-grid row row-fit dark-bg-2-light-bg-1 ">
+																	<div class="col item-content">
+																		<div class="item-title row row-fit">
+																			<span class="title-text col ps-0">
+																				standard
+																			</span>
+																			<div class="col-auto pe-0 item-controls ms-auto"
+																				data-tippy-content='Select the "Manage" button to oversee and handle collections'>
+																				<span class='check' data-tippy-bottom-content='Selected'><i class='bi bi-check2-circle'></i></span>
+																					
+																							<span
+																								data-tippy-bottom-content="You cannot manage the standard collection"
+																								class="col-menu">
+																								<a
+																									class="icon disabled"><i
+																										class="bi bi-three-dots"></i></a>
+																							</span>
+																							
+																			</div>
+																		</div>
+																		<div class="item-description">
+																			This is the standard collection of topics, it consists of non-controversial conversation starters. (Changes language automatically).
+																		</div>
+																	</div>
+																</div>
+															</div>
+															
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div><!-- End Custom Topics -->
+								</div>
+							</div><!-- End Left side columns -->
+
+							<!-- Right side columns -->
+							<div class="col-xl-6 col-md-12">
+								
+	<div class="widget-border mb-card">
+		<div class="widget-border-inner">
+			<div class="card mb-0 border-0" id="premiumWidget">
+				<div class="card-body p-0 text-white">
+					<div class="text-white mb-2">
+						<h6 class="opacity-75 mb-0">DCR Premium <i class="dcr-icons premium-icon"></i></h6>
+		
+						<h3 class="fw-normal">Upgrade Your Plan</h3>
+					</div>
+		
+					<span class="text-secondary small">
+						Unlock the full potential of your experience with the Premium version.
+					</span>
+		
+					<div class="mt-4 mb-1 pt-2 pe-xl-5 d-flex flex-wrap justify-content-between">
+						<div class="d-flex align-items-center pe-2 mb-2">
+							<div class="symbol me-2" style="border: 3px solid var(--primary-pink);">
+								<span class="p-2 symbol-label">
+									<i class="bx bx-message-bubble-captions"></i>
+								</span>
+							</div>
+
+							<div class="ms-1">
+								<span class="fw-semibold">Unlimited <br></span>
+								<span class="fw-normal opacity-75 d-block">Custom
+									Topics</span>
+							</div>
+						</div>
+
+						<div class="d-flex align-items-center pe-2 mb-2">
+							<div class="symbol me-2" style="border: 3px solid var(--primary-pink);">
+								<span class="p-2 symbol-label">
+									<i class="dcr-icons ai-icon text-white"></i>
+								</span>
+							</div>
+
+							<div class="ms-1">
+								<span class="fw-semibold">Full access <br></span>
+								<span class="fw-normal opacity-75">to AI</span>
+							</div>
+						</div>
+
+						<div class="d-flex align-items-center pe-2 mb-2">
+							<div class="symbol me-2" style="border: 3px solid var(--primary-pink);">
+								<span class="p-2 symbol-label">
+									<i class="bx bx-pie-chart-alt"></i>
+								</span>
+							</div>
+
+							<div class="ms-1">
+								<span class="fw-semibold">Advanced <br></span>
+								<span class="fw-normal opacity-75 d-block">Analytics</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-sm-block d-flex flex-column flex-sm-row d-grid gap-2 pt-3">
+						<a href="/premium/redirect" target="_blank"
+							class="btn btn-design flex-shrink-0 me-lg-2 mt-2">
+							Upgrade Plan
+						</a>
+						<a href="/dashboard/premium" class="btn btn-cancel flex-shrink-0 mt-2">
+							Compare Plans
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+									<!-- Recent Activity -->
+									<div class="card">
+										<div class="card-body">
+											<div class="pb-3 row row-fit align-items-center" style="padding-top:20px;">
+												<span class="col ps-0 d-flex">
+													<h5 class="p-0 m-0 card-title">Recent Activity</h5>
+													<span class="text-secondary small ms-2 bottom-0">Latest
+														entries</span>
+												</span>
+
+												<span class="col-auto" style="float: right;display: contents;">
+													<a href="#" class="btn btn-cancel" id="viewMoreActivity">View
+														more</a>
+												</span>
+											</div>
+											<div class="overflow-auto">
+												
+														<div class="text-center pt-2">
+															<h6 style="font-weight: 600;margin:0;">There is no recent
+																activity tracked!</h6>
+														</div>
+														
+											</div>
+										</div>
+									</div>
+
+									<!-- News Card -->
+									<div class="card">
+										<div class="card-body pb-0">
+											<h5 class="card-title">News &amp; Updates <span
+													class="text-secondary ms-2">Latest</span></h5>
+
+											<div class="news">
+												
+													<div class="post-item clearfix">
+														<img src="https://i.ibb.co/XWBwrF1/image.png" alt="Thumbnail - Our New Dashboard Design has been launched!">
+														<h4><a >Our New Dashboard Design has been launched!</a></h4>
+														<p>
+															Check out our sleek new dashboard design! Efficient, intuitive, and ready to streamline your bot management experience.
+														</p>
+													</div>
+													
+													<div class="post-item clearfix">
+														<img src="https://i.ibb.co/CnLsf6c/image.png" alt="Thumbnail - Analytics Released">
+														<h4><a >Analytics Released</a></h4>
+														<p>
+															Our analytics feature is now available for early access, and it&#39;s completely FREE for everyone. Dive in and explore the insights.
+														</p>
+													</div>
+													
+													<div class="post-item clearfix">
+														<img src="https://i.ibb.co/VSjqRnR/image.png" alt="Thumbnail - Topics per Revive Released">
+														<h4><a >Topics per Revive Released</a></h4>
+														<p>
+															By selecting a different topic collection for different revives, you can now target your audience even better.
+														</p>
+													</div>
+													
+											</div>
+
+										</div>
+									</div>
+							</div>
+
+						</div>
+					</section>
+
+				</main><!-- End #main -->
+
+				<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+	<div class="copyright">
+		&copy; Copyright <strong><span>PoldisWeb</span></strong>. All Rights Reserved
+	</div>
+	<div class="credits">
+		Originally designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+		<br><br>
+		<a href="/legal/impressum" class="white-a"  target="_blank"><b>Impressum</b></a>
+	</div>
+</footer><!-- End Footer -->
+
+					<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+							class="bi bi-arrow-up-short"></i></a>
+
+
+					<!-- Vendor JS Files -->
+					<script src="https://unpkg.com/@popperjs/core@2"></script>
+					<script src="https://unpkg.com/tippy.js@6"></script>
+					<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+					<!-- Template Main JS File -->
+					<script src="/assets/js/dash.js"></script>
+					<script>
+						$(`#home a`).removeClass("collapsed");
+					</script>
+
+					<script>
+						const slider = tns({
+							container: '.suggestions',
+							loop: true,
+							items: 1,
+							slideBy: 1,
+							nav: true,
+							navPosition: 'bottom',
+							autoplay: true,
+							speed: 400,
+							autoplayButtonOutput: false,
+							mouseDrag: true,
+							lazyload: true,
+							controls: false,
+							center: true,
+						});
+
+						$("#viewMoreActivity").on("click", (e) => {
+							e.preventDefault();
+							if ($("#tableActivity tr.activity-hidden").hasClass("d-table-row")) {
+								$("#tableActivity tr.activity-hidden").removeClass("d-table-row");
+								$("#viewMoreActivity").text("View more");
+								return;
+							}
+							$("#tableActivity tr.activity-hidden").addClass("d-table-row");
+							$("#viewMoreActivity").text("View less");
+						});
+					</script>
+</body>
+
+</html>
