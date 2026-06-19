@@ -3,6 +3,11 @@ const axios = require('axios');
 exports.handler = async (event, context) => {
   const { code } = event.queryStringParameters;
   
+  console.log('DEBUG - Callback received code:', code);
+  console.log('DEBUG - process.env.CLIENT_ID:', process.env.CLIENT_ID ? 'Set' : 'UNDEFINED');
+  console.log('DEBUG - process.env.CLIENT_SECRET:', process.env.CLIENT_SECRET ? 'Set' : 'UNDEFINED');
+  console.log('DEBUG - process.env.REDIRECT_URI:', process.env.REDIRECT_URI);
+  
   if (!code) {
     return {
       statusCode: 400,
@@ -27,6 +32,7 @@ exports.handler = async (event, context) => {
       }
     );
 
+    console.log('DEBUG - Token response:', tokenResponse.data);
     const { access_token, expires_in } = tokenResponse.data;
 
     // Get user info from Discord
@@ -36,12 +42,16 @@ exports.handler = async (event, context) => {
       }
     });
 
+    console.log('DEBUG - User response:', userResponse.data);
+
     // Get user guilds
     const guildsResponse = await axios.get('https://discord.com/api/users/@me/guilds', {
       headers: {
         Authorization: `Bearer ${access_token}`
       }
     });
+
+    console.log('DEBUG - Guilds response:', guildsResponse.data.length, 'guilds');
 
     // Store auth data in a secure cookie (for demo purposes, in production use a proper DB!)
     const authCookie = `user=${encodeURIComponent(JSON.stringify({
@@ -59,9 +69,13 @@ exports.handler = async (event, context) => {
     };
   } catch (error) {
     console.error('OAuth error:', error.response?.data || error.message);
+    if (error.response) {
+      console.error('OAuth error status:', error.response.status);
+      console.error('OAuth error headers:', error.response.headers);
+    }
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to complete login' })
+      body: JSON.stringify({ error: 'Failed to complete login', details: error.response?.data || error.message })
     };
   }
 };
