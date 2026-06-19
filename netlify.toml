@@ -1,0 +1,6 @@
+
+[[redirects]]
+  from = "https://ultimate-bot.netlify.app/*"
+  to = "https://ultimatebot.qzz.io/:splat"
+  status = 301
+  force = true
