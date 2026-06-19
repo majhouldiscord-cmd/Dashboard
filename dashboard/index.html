@@ -2,1240 +2,822 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dead Chat Reviver - Discord Bot</title>
-    <meta
-        content="Dead Chat Reviver is a Discord bot that helps bring life back to quiet channels by sending automatic revive messages and custom topics. Keep your server active and your community chatting with fun, personalized conversation starters."
-        name="description">
-    <meta
-        content="discord bot, dead chat, chat reviver, revive messages, conversation starters, custom topics, topic bot, topic bot discord, discord engagement, server activity, automated prompts, discord automation, community interaction, chat revival, inactive channel, discord server retention"
-        name="keywords">
+	<title>Dashboard - Dead Chat Reviver</title>
+	<meta content="The Dashboard of the Dead Chat Reviver Bot, a powerful bot that keeps servers and channels alive by sending revival messages, pings, and engaging conversation starters, ensuring active and vibrant communities." name="description">
+	<meta content="Dead Chat Reviver, Chat Reviver, Dashboard, Dead Chat Reviver Dashboard, Chat Reviver Discord, Discord Bot, Dead Chat Reviver Discord, Dead Chat Reviver Discord Bot" name="keywords">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#e07f80">
-    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#202020">
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#e07f80">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#202020">
 
-    <!-- Discord usw. -->
-    <meta name="google-site-verification" content="n8-0xO-biVTo-Ff1V2vj_RxrnLOTF48P2OIHKpjvgXo">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 
-    <meta property="og:title" content="Dead Chat Reviver - Discord Bot">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chat-reviver.com">
-    <meta property="og:image" content="https://i.ibb.co/wNFhHqJ/dcr.png">
-    <meta property="og:description"
-        content="Dead Chat Reviver is a Discord bot that helps bring life back to quiet channels by sending automatic revive messages and custom conversation starters. Keep your server active and your community chatting with fun, personalized topics.">
-    <meta name="theme-color" content="#e07f80">
+	<!-- Vendor CSS Files -->
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'; this.onload=null;">
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'; this.onload=null;">
-    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet" media="print"
-        onload="this.media='all'; this.onload=null;">
-    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'; this.onload=null;">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-
-    <!-- Template Main CSS File -->
-    <link href="/assets/css/index.css" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
-
-    <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4XSLH8XCFL"></script>
-    <script type="text/plain" data-category="analytics" data-service="Google Analytics">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XSLH8XCFL"></script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
+		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'G-4XSLH8XCFL');
-		
-		document.addEventListener('click', function (e) {
-			const btn = e.target.closest('a');
-			if (!btn) return;
-
-			const href = btn.getAttribute('href');
-			if (!href) return;
-
-			if (href.startsWith('/invite')) {
-				gtag('event', 'bot_invite', {
-					'event_category': 'Button',
-					'event_label': href
-				});
-			} else if (href.startsWith('/dashboard') || href.startsWith('/login')) {
-				gtag('event', 'dashboard_opened', {
-					'event_category': 'Button',
-					'event_label': href
-				});
-			}
-		});
 	</script>
+	
+	<!-- Template Main CSS File -->
+	<link href="/assets/css/dash.css" rel="stylesheet">
+	<style>
+		h6 a {
+			font-size: 28px;
+			color: #e9e9e9;
+			font-weight: 700;
+			margin: 0;
+			padding: 0;
+		}
+		.change-server-name {
+ 			overflow: hidden;
+			max-width: 80%;
+			text-overflow: ellipsis;
+		}
+		@media screen and (max-width: 440px) {
+			.btn-design {
+				padding: 8px 14px;
+				font-size: .8em;
+			}
+		}
 
-    <script type="text/plain" data-category="analytics" data-service="ContentSquare"
-        src="https://t.contentsquare.net/uxa/77978b11075d7.js"></script>
+		#sidebar, #overlay {
+			display: none !important;
+		}
+		.noscroll-mobile {
+			overflow: auto !important;
+		}
 
-    <style>
-        .prices .card {
-            margin-bottom: 30px;
-            border: 2px solid var(--line-grey);
-            border-radius: 2.25rem;
-            box-shadow: var(--card-box-shadow);
-            background: transparent;
-            color: var(--text-body-color);
-            padding: 3em 2em;
-        }
+		.header {
+			left: 0;
+		}
 
-        .bg-design-gradient {
-            background: linear-gradient(-45deg, #c05759, #d89092) !important;
-        }
-
-
-
-
-        /* Tippy tooltips */
-        .tippy-box[data-theme~='hero'] {
-            background-color: var(--bg-color-3);
-            color: var(--white);
-            padding: 0.1em 0.2em;
-            border-radius: .7em;
-            font-size: 18px;
-            font-weight: 400;
-            border: 1px solid var(--line-grey);
-        }
-
-        .tippy-box[data-theme~='hero'] .tippy-content {
-            display: flex;
-            align-items: start;
-            justify-content: space-around;
-            gap: .4rem;
-        }
-
-        .tippy-box[data-theme~='hero'] .tippy-content img {
-            margin-top: .17rem;
-        }
-
-        .tippy-box[data-theme~='hero'] .tippy-content .text-secondary {
-            font-size: 15px;
-        }
-
-        .tippy-box[data-theme~='hero'][data-placement^='top']>.tippy-arrow::before {
-            border-top-color: var(--bg-color-3);
-        }
-
-        .tippy-box[data-theme~='hero'][data-placement^='bottom']>.tippy-arrow::before {
-            border-bottom-color: var(--bg-color-3);
-        }
-    </style>
+		.header .logo {
+			display: flex !important;
+		}
+	</style>
 </head>
 
-<body data-bs-theme="dark">
-    <div class="feedback">
-        <div class="notch" title="Feedback">
-            <i class="ri-feedback-line"></i>
-        </div>
-        <div class="feedbackForm">
-            <h4>
-                How do you rate the new homepage?
-            </h4>
-            <div class="rate" id="rating">
-                <input type="radio" id="star5" name="rate" value="5" />
-                <label for="star5" title="5/5 Stars">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
-                <label for="star4" title="4/5 Stars">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
-                <label for="star3" title="3/5 Stars">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
-                <label for="star2" title="2/5 Stars">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
-                <label for="star1" title="1/5 Stars">1 star</label>
-            </div>
-            <div class="submit w-100 text-center">
-                <button class="btn btn-cancel w-100 disabled" id="submitFeedback">Submit</button>
-                <a href="#"><span class="text-secondary d-inline-block mt-2" id="hideFeedback">Hide this
-                        survey.</span></a>
-            </div>
-        </div>
-        <div class="feedbackThanks">
-            <i class="ri-checkbox-circle-fill"></i>
-            <h4>Thanks for helping us improve!</h4>
-            <button class="btn btn-cancel mt-2" id="closeFeedback">Close</button>
-        </div>
-    </div>
-    <div class="feedback-overlay"></div>
+<body>
+	<header id="header" class="header fixed-top d-flex align-items-center">
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top">
-        <a href="https://forms.gle/6xrGMPsvhr4wLeUg7" target="_blank" class="banner banner-active banner-ai"
-            id="banner">
-            <span id="banner-text">
-                We Need Your Feedback!
-                <span class="badge bg-light d-none d-md-block">1 min</span>
-            </span>
-        </a>
-        <div class="container-fluid container-lg d-flex align-items-center gap-3">
+	<div class="d-flex align-items-center justify-content-between">
+		<span class="px-2 cursor-pointer expand-sidebar-btn d-flex d-none" data-tippy-bottom-content="Expand Sidebar">
+			<i class='bx bx-chevron-right fs-3'></i>
+		</span>
+		<i class="bi bi-list toggle-sidebar-btn d-block d-xxl-none" id="toggle-sidebar-btn"></i>
+		<a href="/dashboard/0" class="logo d-flex align-items-center d-xxl-none">
+			<img src="/assets/img/dcr-logo.png" alt="">
+			<span class="d-none d-lg-block logo-text">DCR</span>
+		</a>
+	</div><!-- End Logo -->
 
-            <a href="#hero" class="logo d-flex align-items-center scrollto">
-                <img src="/assets/img/dcr-logo.png" alt="DCR Logo">
-                <span>DCR</span>
-            </a>
+	<nav class="header-nav ms-auto">
+		<ul class="d-flex align-items-center">
+			<li class="nav-item dropdown me-1">
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <div>
-                        <li class="dropdown megamenu">
-                            <a href="#" class="" title="Click to open">
-                                <span>Resources</span>
-                                <i class="bi bi-chevron-down toggle-dropdown"></i>
-                            </a>
-                            <ul class="dropdown-active">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <a href="/status" class="dropdown-item">
-                                                <i class="ri-base-station-line"></i>
-                                                <div>
-                                                    <span>Status<br></span>
-                                                    <span class="shortDescr">
-                                                        View real-time bot and shard availability.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                            <a href="/help-center" class="dropdown-item">
-                                                <i class="ri-question-line"></i>
-                                                <div>
-                                                    <span>Help Center<br></span>
-                                                    <span class="shortDescr">
-                                                        Browse our guides, FAQs, and tutorials.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                            <a href="/support" class="dropdown-item" target="_blank">
-                                                <i class="ri-discord-line"></i>
-                                                <div>
-                                                    <span>Discord Server<br></span>
-                                                    <span class="shortDescr">
-                                                        Join our server for direct support and updates.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <a href="#commands" class="dropdown-item">
-                                                <i class="ri-code-s-slash-line"></i>
-                                                <div>
-                                                    <span>Commands<br></span>
-                                                    <span class="shortDescr">
-                                                        Discover more about what the bot can do.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                            <a href="https://top.gg/bot/887293151998529576/vote" class="dropdown-item"
-                                                target="_blank">
-                                                <i class="ri-check-double-line"></i>
-                                                <div>
-                                                    <span>Vote on top.gg<br></span>
-                                                    <span class="shortDescr">
-                                                        Show support by voting for the bot on top.gg.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                            <a href="/donate" class="dropdown-item" target="_blank">
-                                                <i class="ri-hand-heart-line"></i>
-                                                <div>
-                                                    <span>Donate<br></span>
-                                                    <span class="shortDescr">
-                                                        Help cover hosting and development costs.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/premium">
-                                <i class="dcr-icons premium-icon ms-2 ms-lg-0 me-0 me-lg-2 mb-1 order-1 order-lg-0"></i>
-                                <span class="order-0 order-lg-1">Premium</span>
-                            </a>
-                        </li>
-                    </div>
-                    <div>
-                        <li><a class="nav-link" href="/login/auth">Dashboard</a></li>
-                        <li><a class="btn btn-white ms-lg-4 me-lg-0 my-lg-0 mx-3 my-3" href="/invite"
-                                target="_blank">Invite
-                                Bot <i class="ri-arrow-right-up-line text-black"></i></a></li>
-                    </div>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+				<a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="dropdown" id="themeChange">
+					<i class='bx bx-palette'></i>
+				</a>
 
-        </div>
-    </header><!-- End Header -->
+				<ul class="dropdown-menu dropdown-menu-end theme-picker">
 
-    <div id="scroll-wrapper">
-        <div id="scroll-content">
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between active" href="#" onclick="changeTheme('dark')" id="themeDark">
+							<span><i class="bx bx-moon"></i> Dark</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between" href="#" onclick="changeTheme('light')" id="themeLight">
+							<span><i class="bx bx-sun"></i> Light</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center justify-content-between" href="#" onclick="changeTheme('auto')" id="themeAuto">
+							<span><i class="bx bx-brightness-half"></i> System</span>
+						</a>
+					</li>
 
-            <!-- ======= Hero Section ======= -->
-            <section id="hero" class="hero d-flex">
-                <div class="container d-flex mt-4 mt-lg-0">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="kicker">
-                                <span class="profiles">
-                                    <img src="/assets/img/home/serverAvatars/a_f344cb866a332bd5c3b9135ce4c7a243.png"
-                                        alt="Pepe Universe" class="profile" data-tippy-server="pepeUniverse">
-                                    <img src="/assets/img/home/serverAvatars/8bc2bb4e2620ce0905dc429051df9979.png"
-                                        alt="Steal a Brainrot Unofficial" class="profile"
-                                        data-tippy-server="stealABrainrotUnofficial">
-                                    <img src="/assets/img/home/serverAvatars/a_92f9d3cdb0b75a5ecbf38f04f199ba2d.png"
-                                        alt="The Art of Poetry" class="profile" data-tippy-server="theArtOfPoetry">
-                                    <img src="/assets/img/home/serverAvatars/214a443b9d9fd23a23f1ae3b37df51b2.png"
-                                        alt="Kongregate" class="profile" data-tippy-server="kongregate">
-                                    <img src="/assets/img/home/serverAvatars/f334009032810b2c8d6ad1c5bd2eb408.png"
-                                        alt="Memeplex" class="profile" data-tippy-server="memeplex">
-                                </span>
+				</ul>
+			</li>
 
-                                <div style="display: none;">
-                                    <div id="pepeUniverse">
-                                        <img src="/assets/img/home/serverAvatars/types/Community_Server_Boosted.png"
-                                            height="20">
-                                        <div>
-                                            Pepe Universe <br>
-                                            <span class="text-secondary">120k+ Members</span>
-                                        </div>
-                                    </div>
-                                    <div id="stealABrainrotUnofficial">
-                                        <img src="/assets/img/home/serverAvatars/types/Community_Server_Boost_Public.png"
-                                            height="20">
-                                        <div>
-                                            Steal a Brainrot Unofficial <br>
-                                            <span class="text-secondary">80k+ Members</span>
-                                        </div>
-                                    </div>
-                                    <div id="theArtOfPoetry">
-                                        <img src="/assets/img/home/serverAvatars/types/Partner.png" height="20">
-                                        <div>
-                                            The Art of Poetry <br>
-                                            <span class="text-secondary">Discord Partner</span>
-                                        </div>
-                                    </div>
-                                    <div id="memeplex">
-                                        <img src="/assets/img/home/serverAvatars/types/Community_Server_Boost_Public.png"
-                                            height="20">
-                                        <div>
-                                            Memeplex <br>
-                                            <span class="text-secondary">55k+ Members</span>
-                                        </div>
-                                    </div>
-                                    <div id="kongregate">
-                                        <img src="/assets/img/home/serverAvatars/types/Verified.png" height="20">
-                                        <div>
-                                            Kongregate <br>
-                                            <span class="text-secondary">Verified</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="ms-md-2">trusted by <b>
-                                        <!-- < % = total_guilds % > -->
-                                        20,000+
-                                    </b> <span class="desktop-only">servers</span></span>
-                            </div>
-                            <h1 class="accentHighlight desktop-only">
-                                All it takes is one <span style="white-space: nowrap;"><img
-                                        src="/assets/img/home/sparkles_2728.png" alt="Sparkles" class="emoji"
-                                        style="display: inline-block;height: 1em;"> Spark</span>.
-                            </h1>
-                            <h1 class="accentHighlight mobile-only">
-                                It takes one <span style="white-space: nowrap;"><img
-                                        src="/assets/img/home/sparkles_2728.png" alt="Sparkles" class="emoji"
-                                        style="display: inline-block;height: 1em;"> Spark</span>.
-                            </h1>
-                            <h4 class="subtitle desktop-only">
-                                Keep your members engaged and happy!
-                                Custom Topics and Revive Messages keep your server alive and active.
-                            </h4>
-                            <h4 class="subtitle mobile-only">
-                                Custom Topics & Revive Messages keep your server alive and active.
-                            </h4>
-                            <div class="text-center text-lg-start">
-                                <a href="/invite?utm_source=hero" target="_blank"
-                                    class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span>
-                                        Invite the Bot
-                                    </span>
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                                <a href="/login/auth"
-                                    class="btn-get-started btn-hero-secondary scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span>
-                                        Dashboard
-                                    </span>
-                                    <i class="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="hero-card">
-                                <lottie-player src="/assets/img/home/lottie/Hero-2.json" background="transparent"
-                                    speed="1" playmode="normal" loop autoplay></lottie-player>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- End Hero -->
+			<li class="nav-item dropdown pe-3">
 
+				<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+					<img src="https://cdn.discordapp.com/avatars/1449374258873503796/eba6c0e75ad5e1221a8b9dfea57080e8.png" alt="Profile"
+						class="rounded-circle">
+					<span class="d-none d-md-flex align-items-center ps-2">
+						majhoul.gg <i class='bx bx-chevron-down'></i>
+					</span>
+				</a><!-- End Profile Iamge Icon -->
 
-            <main id="main">
-
-                <section id="setup-desktop" class="d-none d-lg-block pb-0" style="background-color: var(--bg-color-3);">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 col-md-9 mx-auto">
-                                <h1 style="font-size: 100px;font-weight: 700;">Start where you're comfortable.</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pinnedSplitSection">
-                        <div class="container-fluid mx-lg-5">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="left">
-                                        <div class="desktopContent">
-                                            <div>
-                                                <h1 class="desktopHeading"><a href="javascript:void(0)"
-                                                        onclick="goToIndex(0)">On Discord.</a></h1>
-                                                <h1 class="desktopHeading"><a href="javascript:void(0)"
-                                                        onclick="goToIndex(1)">On
-                                                        the Dashboard.</a></h1>
-                                            </div>
-
-                                            <div class="desktopActions">
-                                                <a href="/invite" target="_blank" class="btn">Invite the Bot<i
-                                                        class="ri-arrow-right-up-line ms-1"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="right">
-                                        <div class="desktopPhotos">
-                                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
-                                                class="blob-svg" id="blob1">
-                                                <defs>
-                                                    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%"
-                                                        y2="100%">
-                                                        <stop offset="0%" stop-color="#0F62FE" />
-                                                        <stop offset="100%" stop-color="#A6C8FF" />
-                                                    </linearGradient>
-                                                </defs>
-
-                                                <path fill="url(#blueGradient)"
-                                                    d="M48.8,-57.3C64.1,-45.3,77.9,-30.7,83.6,-12.6C89.4,5.5,87.1,27.2,76.1,41.7C65.1,56.2,45.4,63.6,27.9,64.9C10.3,66.2,-5.2,61.6,-22,57C-38.7,52.3,-56.7,47.7,-68.6,35.5C-80.6,23.3,-86.6,3.5,-80.9,-11.8C-75.3,-27,-58,-37.7,-42.5,-49.7C-27.1,-61.6,-13.6,-74.7,1.6,-76.6C16.8,-78.5,33.5,-69.2,48.8,-57.3Z"
-                                                    transform="translate(100 100)" />
-                                            </svg>
-                                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                                                class="blob-svg" id="blob2">
-                                                <defs>
-                                                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                                                        <stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%">
-                                                        </stop>
-                                                        <stop id="stop2" stop-color="rgba(251, 168, 31, 1)"
-                                                            offset="100%"></stop>
-                                                    </linearGradient>
-                                                </defs>
-                                                <path fill="url(#sw-gradient)"
-                                                    d="M14.9,-4.9C21.9,-3.2,31.8,3.2,32.1,9.5C32.4,15.9,23.1,22.3,14.7,23.8C6.2,25.4,-1.4,22,-10.6,18.8C-19.9,15.6,-30.8,12.6,-35,4.9C-39.2,-2.7,-36.7,-15,-29.7,-16.7C-22.8,-18.4,-11.4,-9.5,-3.7,-6.5C4,-3.6,8,-6.6,14.9,-4.9Z"
-                                                    width="100%" height="100%" transform="translate(50 50)"
-                                                    stroke-width="0" style="transition: 0.3s;"></path>
-                                            </svg>
-                                            <div class="desktopPhoto">
-                                                <lottie-player id="discordSetup" class="discordSetup"
-                                                    src="/assets/img/home/lottie/Discord-Setup-Transparent.json"
-                                                    background="transparent" speed="1" playmode="normal" loop
-                                                    autoplay></lottie-player>
-                                            </div>
-                                            <div class="desktopPhoto">
-                                                <lottie-player id="dashboardSetup" class="dashboardSetup"
-                                                    src="/assets/img/home/lottie/Dashboard-Setup-Transparent.json"
-                                                    background="transparent" speed="1" playmode="normal" loop
-                                                    autoplay></lottie-player>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-
-                <section id="setup-mobile" class="section-side video-section d-block d-lg-none"
-                    style="background-color: var(--bg-color-3);">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-12 section-header pb-0">
-                                <h2>Setup</h2>
-                                <p>Ready when you are.</p>
-                            </div>
-                        </div>
-
-                        <div class="setup-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <h2 class="mb-3">On Discord.</h2>
-                                        <lottie-player id="discordSetup" class="discordSetup"
-                                            src="/assets/img/home/lottie/Discord-Setup.json" background="transparent"
-                                            speed="1" playmode="normal" loop autoplay></lottie-player>
-
-                                        <div class="playpause">
-                                            <button id="playPauseBtn-discordSetup" class="playpause-btn"
-                                                aria-label="Play/Pause Animation">
-                                                <i class="bi bi-pause-fill"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <h2 class="mb-3">On the Dashboard.</h2>
-                                        <lottie-player id="dashboardSetup" class="dashboardSetup"
-                                            src="/assets/img/home/lottie/Dashboard-Setup.json" background="transparent"
-                                            speed="1" playmode="normal" loop autoplay></lottie-player>
-
-                                        <div class="playpause">
-                                            <button id="playPauseBtn-dashboardSetup" class="playpause-btn"
-                                                aria-label="Play/Pause Animation">
-                                                <i class="bi bi-pause-fill"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="navigation justify-content-end">
-                            <div class="nav-action previous">
-                                <i class="bi bi-chevron-left"></i>
-                            </div>
-                            <div class="nav-action next">
-                                <i class="bi bi-chevron-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Topics -->
-                <section id="topic-hero">
-                    <div class="topic-hero-wrapper">
-                        <div class="spacer"></div>
-                        <div class="container">
-                            <div class="scaleAwaySection">
-                                <h1>Conversation Starters.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="" style="margin-top: -5em;">
-                    <div class="container text-center">
-                        <h1 style="color: var(--ai-color); font-weight: 500;" class="display-3">Create with AI <i
-                                class="dcr-icons ai-icon"></i></h1>
-                        <lottie-player id="customTopics" class="customTopics"
-                            src="/assets/img/home/lottie/ai-topics.json" background="transparent" speed="1"
-                            playmode="normal" loop autoplay style="max-width: 50em;"></lottie-player>
-
-                        <a href="/topic-bot" class="btn btn-cancel" style="background: var(--bg-color-3)">More about AI
-                            <i class="ri-arrow-right-line"></i></a>
-                    </div>
-                </section>
-
-                <section id="topics">
-                    <div class="container">
-
-                        <div class="scrolling-words-container">
-                            <span class="title">Auto-translated</span>
-                            <div class="scrolling-words-box">
-                                <ul class="scrolling-words-list">
-                                    <li class="title">topics.</li>
-                                    <li class="title">argomenti.</li>
-                                    <li class="title">temas.</li>
-                                    <li class="title">Themen.</li>
-                                    <li class="title">tópicos.</li>
-                                    <li class="title">sujets.</li>
-                                    <li class="title">topics.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="marquee mt-5">
-                        <div class="marquee-carousel marquee-carousel-1">
-                            <div class="marquee-items">
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                            </div>
-                        </div>
-                        <div class="marquee-carousel marquee-carousel-2">
-                            <div class="marquee-items">
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                            </div>
-                        </div>
-                        <div class="marquee-carousel marquee-carousel-1">
-                            <div class="marquee-items">
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                            </div>
-                        </div>
-                        <div class="marquee-carousel marquee-carousel-2">
-                            <div class="marquee-items">
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                                <div class="marquee-item"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="unlimited-topics" class="py-0">
-                    <div class="container">
-                        <div class="stack mx-auto">
-                            <h1 class="stacked stacked-5">Unlimited</h1>
-                            <h1 class="stacked stacked-4">Unlimited</h1>
-                            <h1 class="stacked stacked-3">Unlimited</h1>
-                            <h1 class="stacked stacked-2">Unlimited</h1>
-                            <h1 class="stacked stacked-1">Unlimited</h1>
-                            <h1 class="main-text">Unlimited</h1>
-                        </div>
-                        <h1 style="margin-top: .7em;">Custom Topics.</h1>
-                    </div>
-                </section>
-
-                <section id="custom-topics" class="cards-text-below">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 mx-auto">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-5">
-                                        <div class="card d-flex justify-content-center">
-                                            <lottie-player id="customTopics" class="customTopics"
-                                                src="/assets/img/home/lottie/Custom-Topics.json"
-                                                background="transparent" speed="1" playmode="normal" loop
-                                                autoplay></lottie-player>
-
-                                            <div class="playpause">
-                                                <button id="playPauseBtn-customTopics" class="playpause-btn"
-                                                    aria-label="Play/Pause Animation">
-                                                    <i class="bi bi-pause-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <b>Take total control.</b> Create your own topics representing your server's
-                                            theme and community.
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-5">
-                                        <div class="card d-flex justify-content-center">
-                                            <img src="/assets/img/home/Topic Collections.png" alt="Topic Collections"
-                                                class="img-fluid">
-                                        </div>
-                                        <div class="info">
-                                            <b>Organized well.</b> Create
-                                            collections for different themes or events, and easily manage your topics.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- <section id="highlights" style="background-color: var(--bg-color-3);">
-					<div class="container">
-						<div class="section-header">
-							<p>Explore other features.</p>
+				<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+					<li class="dropdown-header d-flex align-items-center px-3">
+						<div class="me-3">
+							<img src="https://cdn.discordapp.com/avatars/1449374258873503796/eba6c0e75ad5e1221a8b9dfea57080e8.png" alt="Profile">
 						</div>
-						<div class="highlights-swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="highlights-card">
-										<h2 class="mb-3">Analytics.</h2>
-										<img src="/assets/img/home/Analytics-portrait.png" alt="Analytics Feature"
-											class="img-fluid">
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="highlights-card">
-										<h2 class="mb-3">Multi-Language.</h2>
-										<lottie-player id="multiLanguageHighlights" class="multiLanguageHighlights"
-											src="/assets/img/home/lottie/Multi-Language-highlights.json"
-											background="transparent" speed="1" playmode="normal" loop autoplay
-											alt="Multiple languages supported"></lottie-player>
 
-										<div class="playpause">
-											<button id="playPauseBtn-multiLanguageHighlights" class="playpause-btn"
-												aria-label="Play/Pause Animation">
-												<i class="bi bi-pause-fill"></i>
-											</button>
+						<div class="d-flex flex-column text-start">
+							<h6>
+								majhoul.gg
+							</h6>
+
+							<span class="fw-semibold">
+								1449374258873503796
+							</span>
+						</div>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/user/1449374258873503796">
+							<span>My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center"
+							href="/dashboard/user/1449374258873503796/settings">
+							<span>My Settings</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/0">
+							<span>My Servers</span>
+						</a>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/dashboard/premium">
+							<span>Premium <i class="dcr-icons premium-icon"></i></span>
+						</a>
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/help-center" target="_blank">
+							<span>Help Center</span>
+						</a>
+					</li>
+
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="/logout">
+							<span>Sign Out</span>
+						</a>
+					</li>
+
+				</ul><!-- End Profile Dropdown Items -->
+			</li><!-- End Profile Nav -->
+		</ul>
+	</nav><!-- End Icons Navigation -->
+
+</header>
+
+<script>
+	const setActive = (theme) => {
+		if (theme == "dark") {
+			document.getElementById('themeDark').classList.add('active');
+			document.getElementById('themeLight').classList.remove('active');
+			document.getElementById('themeAuto').classList.remove('active');
+		} else if (theme == "light") {
+			document.getElementById('themeDark').classList.remove('active');
+			document.getElementById('themeLight').classList.add('active');
+			document.getElementById('themeAuto').classList.remove('active');
+		} else {
+			document.getElementById('themeDark').classList.remove('active');
+			document.getElementById('themeLight').classList.remove('active');
+			document.getElementById('themeAuto').classList.add('active');
+		}
+	}
+
+	const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+	if (currentTheme) {
+		if (currentTheme != "auto") {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+			setActive(currentTheme);
+		} else {
+			setActive("auto");
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-theme', "dark");
+			} else {
+				document.documentElement.setAttribute('data-theme', "light");
+			}
+		}
+	}
+
+	const changeTheme = (theme) => {
+		localStorage.setItem('theme', theme);
+		if (theme != "auto") {
+			document.documentElement.setAttribute('data-theme', theme);
+			setActive(theme);
+		} else {
+			setActive("auto");
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-theme', "dark");
+			} else {
+				document.documentElement.setAttribute('data-theme', "light");
+			}
+		}
+	}
+</script>
+	<aside id="sidebar" class="sidebar d-flex flex-column overflow-hidden pt-3 px-1">
+
+	<div class="d-none d-xxl-flex align-items-center justify-content-between text-center" style="margin-left: calc(1rem + 15px);">
+		<a href="/dashboard/0" class="logo d-flex align-items-center mb-4 ms-1" style="width: fit-content;">
+			<img src="/assets/img/dcr-logo.png" alt="">
+			<span class="d-none d-lg-block logo-text">DCR</span>
+		</a>
+
+		<span class="px-2 mb-4 cursor-pointer collapse-sidebar-btn" style="border-left: 1px solid var(--line-grey);" data-tippy-bottom-content="Collapse Sidebar">
+			<i class='bx bx-chevron-left fs-3'></i>
+		</span>
+	</div><!-- End Logo -->
+
+	<div class="overflow-x-hidden overflow-y-auto px-3 h-100" style="transform: scaleX(-1);">
+		<div class="h-100 d-flex flex-column justify-content-between" style="transform: scaleX(-1);">
+			<div class="flex-column-fluid">
+				<ul class="sidebar-nav pb-2" id="sidebar-nav">
+
+					<li class="nav-heading">Dashboard</li>
+
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#" data-bs-toggle="dropdown" id="selectServerBtn">
+							<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar"
+								class="selectServerAvatar" id="selectServerCurrentAvatar">
+							<span id="selectServerCurrentName">Change Server</span> 
+							<i class='bx bx-chevron-down'></i> 
+						</a>
+
+						<ul class="dropdown-menu selectServerDropdown" id="selectServerDropdown">
+
+							<li class="mb-0 pe-none" id="selectServerLoader">
+								<a class="dropdown-item d-flex align-items-center justify-content-between">
+									<img src="https://chat-reviver.com/assets/img/loading.png" alt="" width="70px"
+										class="mx-auto py-4">
+								</a>
+							</li>
+
+						</ul>
+					</li>
+
+					<li class="nav-item" id="home">
+						<a class="nav-link collapsed"
+							href="/dashboard/server/">
+							<i class="bx bx-home-alt-2"></i>
+							<span>Home</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="settings">
+						<a class="nav-link collapsed"
+							href="/dashboard/server//settings">
+							<i class="bx bx-slider-alt"></i>
+							<span>Bot Settings</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="revives">
+						<a class="nav-link collapsed"
+							href="/dashboard/server//revives">
+							<i class="bx bx-message-bubble-heart"></i>
+							<span>Revives</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="topics">
+						<a class="nav-link collapsed"
+							href="/dashboard/server//topics">
+							<i class="bx bx-message-bubble-captions"></i>
+							<span class="position-relative" id="topicsText">
+								Topics <span class="badge badge-sm ms-1" style="background: var(--ai-gradient-btn)">AI</span>
+							</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="analytics">
+						<a class="nav-link collapsed"
+							href="/dashboard/server//analytics">
+							<i class="bx bx-pie-chart-alt"></i>
+							<span>Analytics</span>
+						</a>
+					</li>
+
+					<li class="nav-heading">Support</li>
+
+					<li class="nav-item" id="faq">
+						<a class="nav-link collapsed" href="/help-center/faqs">
+							<i class="bx bx-help-circle"></i>
+							<span>FAQs</span>
+						</a>
+					</li>
+
+					<li class="nav-item" id="tutorials">
+						<a class="nav-link collapsed" href="/help-center/guides">
+							<i class="bx bx-book-bookmark"></i>
+							<span>Guides & Resources</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="/support" target="_blank">
+							<i class="bx bx-community"></i>
+							<span>Support Server</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!--  -->
+
+				<div class="flex-column-auto">
+					<div class="card position-relative border-0" style="background-color: var(--bg-color);">
+						<div class="card-body">
+							<div class="card-title fs-5">
+                                We Need Your Help!
+                            </div>
+							Help shape the next era of DCR. <br><br>
+							<a href="https://forms.gle/6xrGMPsvhr4wLeUg7" target="_blank" class="btn btn-design w-100">1min Survey</a>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+</aside>
+<div id="overlay"></div>
+
+
+<script>
+	if (document.getElementById('shareFeedback')) {
+		document.getElementById('shareFeedback').addEventListener('click', async () => {
+			const rating = document.querySelector('#survey-card input[name="options"]:checked').id.replace('option', '');
+
+			const answer = await fetch('/api/endpoints/surveys/1', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					answer1: rating,
+				})
+			});
+
+			const { success, msg } = await answer.json();
+
+			if (success == false && msg != "You've already cast your vote in this survey.") {
+				return alert(msg);
+			}
+
+			document.getElementById('survey-card').style.display = 'none';
+			document.getElementById('thanks-survey-msg').innerText = msg;
+			if (!success) document.getElementById('thanks-survey-msg').classList.add('text-danger');
+			document.getElementById('thanks-survey').style.display = 'block';
+		});
+	}
+</script>
+
+	<div class="modal fade" id="onboardingModal" tabindex="-1" aria-labelledby="onboardingModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+		<div class="modal-content bg-dark modal-design">
+			<div class="modal-body text-center">
+				<div class="onboarding-container">
+					<div class="onboarding">
+						<div class="p-3">
+							<h3 class="mb-4">Welcome to <span class="fw-bold accentHighlight">Dead Chat
+									Reviver</span>!</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4 d-flex align-items-center justify-content-center">
+									<img src="null" data-src="/assets/img/onboarding/onboarding.svg"
+										alt="Illustration" width="400" class="tns-lazy-img rounded-2 img-fluid"
+										style="max-height: 235px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									<h5 class="mb-4">Spend a moment discovering the capabilities of this Bot</h5>
+									<div class="d-flex align-items-center mb-3">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-chat-heart"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Revive Messages
+											</h5>
 										</div>
 									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="highlights-card">
-										<h2 class="mb-3">Nightmode.</h2>
-										<lottie-player id="nightmodeHighlights" class="nightmodeHighlights"
-											src="/assets/img/home/lottie/Nightmode-highlights.json"
-											background="transparent" speed="1" playmode="normal" loop autoplay
-											style="z-index: -1;" alt="Nightmode Feature"></lottie-player>
-
-										<div class="playpause">
-											<button id="playPauseBtn-nightmodeHighlights" class="playpause-btn"
-												aria-label="Play/Pause Animation">
-												<i class="bi bi-pause-fill"></i>
-											</button>
+									<div class="d-flex align-items-center mb-3">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-translate"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Multi-Language
+											</h5>
 										</div>
 									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="highlights-card">
-										<h2 class="mb-3">Mobile-friendly Dashboard.</h2>
-										<img src="/assets/img/home/Mix-Dashboard-mobile.png"
-											alt="Mobile-firendly Dashboard" class="img-fluid">
+									<div class="d-flex align-items-center">
+										<div
+											class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+											<i class="bi bi-pencil"></i>
+										</div>
+										<div class="ps-3">
+											<h5 class="m-0">
+												Fully Customizable
+											</h5>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="navigation justify-content-end">
-							<div class="nav-action previous">
-								<i class="bi bi-chevron-left"></i>
+						<div class="p-3">
+							<h3 class="mb-4">Breathe New Life into Your Servers</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4">
+									<img src="null" data-src="/assets/img/onboarding/create-revive.gif"
+										width="400" class="tns-lazy-img rounded-2 img-fluid" style="max-height: 225px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									To set up your initial revive, navigate to the <b>Revives Section</b> and select
+									<b>"Add
+										New"</b>.
+									<br><br>
+									For detailed guidance on setting up your first revive, consult the article
+									"Setting up Your First Revive Channel". <br>
+									<a href="/help-center/guides/guide/4" class="btn btn-cancel mt-2">Help Center
+										Article <i class="bi bi-arrow-right"></i></a>
+								</div>
 							</div>
-							<div class="nav-action next">
-								<i class="bi bi-chevron-right"></i>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-4">Language Preferences for a Global Audience</h3>
+							<div class="row">
+								<div class="col-lg-6 mb-4">
+									<img src="null" data-src="/assets/img/onboarding/change-language.gif"
+										width="400px" class="tns-lazy-img rounded-2 img-fluid"
+										style="max-height: 225px;">
+								</div>
+								<div class="col-lg-6 text-start mb-4">
+									To modify the bot's language, navigate to the <b>Bot Settings tab</b>, choose
+									your
+									preferred language, and click the <b>"Save"</b> button.
+									<br><br>
+									For detailed guidance on setting the bot's language, consult the article
+									"Setting the
+									Language". <br>
+									<a href="/help-center/guides/guide/3" class="btn btn-cancel mt-2">Help Center
+										Article <i class="bi bi-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-4">Explore More Features</h3>
+							<div class="row text-start mx-xl-5">
+								<div class="col-lg-6">
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Customize Revive Messages</h5>
+											<a href="/help-center/guides/guide/8" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Custom Topics</h5>
+											<a href="/help-center/guides/guide/9" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-6 mb-4">
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Nightmode</h5>
+											<a href="/help-center/guides/guide/7" class="btn btn-cancel">Read more
+												<i class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="card" style="background-color: var(--bg-color-4);">
+										<div class="card-body">
+											<h5 class="card-title">Analytics</h5>
+											<a href="/help-center/guides" class="btn btn-cancel">Read more <i
+													class="bi bi-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="p-3">
+							<h3 class="mb-1">Upgrade Your Plan</h3>
+							<div class="text-secondary mb-4">Unlock the full potential of your experience with our
+								Premium version.</div>
+							<div class="row text-start mx-xl-5">
+								<div class="col-lg-6 mb-4 align-items-center justify-content-center order-lg-0 order-1">
+									<img data-src="/assets/img/launch.svg" alt="Illustration"
+										class="tns-lazy-img rounded-2 img-fluid" width="400px"
+										style="max-height: 272px;">
+								</div>
+
+								<div class="col-lg-6 mb-4 order-lg-1 order-0">
+									<h4 class="fw-semibold pb-1">What’s in <span class="accentHighlight">Premium
+											Plan</span>?</h4>
+									<div class="p-4 rounded-4" style="background: var(--bg-color)">
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Create <span class="accentHighlight fw-bold">Custom Topics</span>
+												for a Unique Touch
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Remove Any Ads Distractions
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												<span class="accentHighlight fw-bold">Personalize Revive
+													Messages</span> with Custom
+												Content
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex mb-3">
+											<span class="flex-grow-1">
+												Access <span class="accentHighlight fw-bold">Advanced
+													Analytics</span> Features
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+										<div class="d-flex">
+											<span class="flex-grow-1">
+												Gain a Special Role on the Support Server
+											</span>
+											<i class="bi bi-check-circle text-success"></i>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</section> -->
-
-                <!-- ======= Commands Section ======= -->
-                <section id="commands" class="faq" style="background-color: var(--bg-color-3);">
-
-                    <div class="container">
-
-                        <header class="section-header">
-                            <h2>Commands</h2>
-                            <p>Tap. Type. Tame the silence.</p>
-                        </header>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="accordion accordion-flush mb-4">
-                                    <div class="filter-basic accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-help">
-                                            /help
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Basic</span>
-                                        </button>
-                                        <div id="cmd-help" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Shows details about the bot and its commands
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-basic accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-settings">
-                                            /settings
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Basic</span>
-                                        </button>
-                                        <div id="cmd-settings" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Facilitates customization of language and additional preferences
-                                                <br><br>
-
-                                                <h6 class="accordion-title">Required Arguments</h6>
-                                                <span class="code-design code-info">lang</span> – Desired language
-                                                setting
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-basic accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-topic">
-                                            /topic
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Basic</span>
-                                        </button>
-                                        <div id="cmd-topic" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Provides a random conversation starter to liven up the chat
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-dashboard accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-dashboard">
-                                            /dashboard
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Dashboard</span>
-                                        </button>
-                                        <div id="cmd-dashboard" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Generates a link to access the dashboard
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-dashboard accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-create">
-                                            /create topic
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Dashboard</span>
-                                        </button>
-                                        <div id="cmd-create" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Creates a new set of topics for the server
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="accordion accordion-flush mb-4">
-                                    <div class="filter-revive accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-setup">
-                                            /setup
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Revive</span>
-                                        </button>
-                                        <div id="cmd-setup" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Set up or modify revive message settings for a specific channel using
-                                                this
-                                                command <br><br>
-
-                                                <h6 class="accordion-title">Required Arguments</h6>
-                                                <span class="code-design code-info">channel</span> – Designated channel
-                                                for
-                                                the
-                                                rules <br>
-                                                <span class="code-design code-info">time</span> – Time of inactivity
-                                                required to
-                                                trigger the bot <br><br>
-
-                                                <h6 class="accordion-title">Optional Arguments</h6>
-                                                <span class="code-design code-info">role</span> – Designate a role for
-                                                pinging
-                                                when the chat becomes
-                                                inactive
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-revive accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-delete">
-                                            /delete
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Revive</span>
-                                        </button>
-                                        <div id="cmd-delete" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Removes a specific channel's revive message <br><br>
-
-                                                <h6 class="accordion-title">Required Arguments</h6>
-                                                <span class="code-design code-info">channel</span> – Designated channel
-                                                for
-                                                the
-                                                rules
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-revive accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-list">
-                                            /list
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Revive</span>
-                                        </button>
-                                        <div id="cmd-list" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Shows all revive message channels along with their respective settings
-                                                on
-                                                the server
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="filter-revive accordion-item">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#cmd-nightmode">
-                                            /nightmode
-                                            <span class="status-badge badge rounded-pill badge-cmd"
-                                                id="status-bot">Revive</span>
-                                        </button>
-                                        <div id="cmd-nightmode" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <h6 class="accordion-title">Description</h6>
-                                                Suspends pinging during designated sleeping hours <br><br>
-
-                                                <h6 class="accordion-title">Required Arguments</h6>
-                                                <span class="code-design code-info">channel</span> – Designated channel
-                                                for
-                                                the
-                                                rules
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="view-more-shadow"></div>
-                        </div>
-
-                        <button class="btn btn-cancel view-more-btn" id="viewMoreCommands">View <span
-                                class="text">more</span> <span class="icon d-inline-block"><i
-                                    class="ri-arrow-down-line"></i></span></button>
-
-                    </div>
-
-                </section><!-- End Commands Section -->
-
-                <!-- ======= Premium Section ======= -->
-                <section id="premium" class="premium prices" style="background-color: var(--bg-color-3);">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2 style="color:#e07f80;">Pricing</h2>
-                            <p>Unlock more.</p>
-                        </div>
-
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6 d-flex d-md-none d-lg-flex" data-aos-delay="200">
-                                <div class="card w-100">
-                                    <div class="card-body p-0 mx-auto text-center"
-                                        style="display: flex;flex-direction: column;justify-content: space-between;">
-                                        <h3>Basic</h3>
-                                        <div class="display-4 text-design fw-bold">0€</div>
-                                        <div class="mb-4 text-secondary">per month</div>
-                                        <p class="mb-4 pb-4 fst-italic">Allows you to use all the basic features.</p>
-                                        <a class="btn btn-light btn-rounded w-100 py-3" href="/invite"
-                                            target="_blank">Start for Free</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card w-100 h-100 pt-0 px-0 mb-0 premium-most-popular-card"
-                                    style="background-color: var(--bg-color);">
-                                    <div class="premium-most-popular-banner py-2">
-                                        <b>Most Popular</b>
-                                    </div>
-                                    <div class="card-body mx-auto text-center premium-most-popular-card-body"
-                                        style="display: flex;flex-direction: column;justify-content: space-between;">
-                                        <h3><i class="dcr-icons premium-icon glow"></i> Premium</h3>
-                                        <div class="display-4 fw-bold accentHighlight">3,99€</div>
-                                        <div class="mb-4 text-secondary">per month</div>
-                                        <p class="mb-4 pb-4 fst-italic">Gives you full access to <b>AI features</b>,
-                                            infinite custom topics and more.</p>
-                                        <a class="btn btn-design w-100 py-3" href="/premium/redirect/checkout/1"
-                                            target="_blank">Go Premium</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mx-auto">
-                                <div class="card w-100">
-                                    <div class="card-body p-0 mx-auto text-center"
-                                        style="display: flex;flex-direction: column;justify-content: space-between;">
-                                        <h3><i class="dcr-icons premium-icon glow"></i> Premium Plus</h3>
-                                        <div class="display-4 fw-bold">9,99€</div>
-                                        <div class="mb-4 text-secondary">per month</div>
-                                        <p class="mb-4 pb-4 fst-italic">Extends Premium benefits across <b>three
-                                                servers</b>.</p>
-                                        <a class="btn btn-light btn-rounded w-100 py-3"
-                                            href="/premium/redirect/checkout/2" target="_blank">Go Premium Plus</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <a href="/premium" class="btn btn-cancel">Read more <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
-                </section><!-- End Premium Section -->
-
-                <!-- ======= Help Center Section ======= -->
-                <section id="recent-blog-posts" class="recent-blog-posts">
-
-                    <div class="container">
-
-                        <header class="section-header">
-                            <h2>Help Center</h2>
-                            <p>We got you covered.</p>
-                        </header>
-
-                        <div class="row">
-
-                            <div class="col-xl-4 col-lg-6 col-xs-12 mb-4">
-                                <div class="post-box">
-                                    <div class="post-inner">
-                                        <h3 class="post-title">Discover answers to commonly asked questions.</h3>
-                                        <a href="/help-center/faqs" class="readmore stretched-link mt-auto"
-                                            target="_blank">
-                                            <span>View FAQ</span>
-                                        </a>
-                                    </div>
-                                    <div class="arrow">
-                                        <i class="ri-arrow-right-up-line"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-lg-6 col-xs-12 mb-4">
-                                <div class="post-box">
-                                    <div class="post-inner">
-                                        <h3 class="post-title">Explore our Guides &amp; Resources for tutorials and
-                                            more.
-                                        </h3>
-                                        <a href="/help-center/guides" class="readmore stretched-link mt-auto"
-                                            target="_blank">
-                                            <span>Browse Guides</span>
-                                        </a>
-                                    </div>
-                                    <div class="arrow">
-                                        <i class="ri-arrow-right-up-line"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-lg-6 col-xs-12 mb-4 mx-auto">
-                                <div class="post-box">
-                                    <div class="post-inner">
-                                        <h3 class="post-title">
-                                            Get answers directly from our team.
-                                        </h3>
-                                        <a href="/support" target="_blank" class="readmore stretched-link mt-auto"
-                                            target="_blank">
-                                            <span>Join Support Server</span>
-                                        </a>
-                                    </div>
-                                    <div class="arrow">
-                                        <i class="ri-arrow-right-up-line"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section><!-- End Recent Articles Posts Section -->
-
-            </main><!-- End #main -->
-
-            <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
-
-	<div class="footer-top">
-		<div class="container">
-			<div class="row gy-4">
-				<div class="col-lg-5 col-md-12 footer-info">
-					<a href="/" class="logo d-flex align-items-center">
-						<img src="/assets/img/dcr-logo.png" alt="">
-						<span>Dead Chat Reviver</span>
-					</a>
-					<p>
-						admin@dcr.poldisweb.de <br>
-						support@poldisweb.de <br>
-						business@poldisweb.de
-					</p>
 				</div>
-
-				<div class="col-lg-2 col-6 footer-links">
-					<h4>Useful Links</h4>
-					<ul>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/invite?utm_source=footer">
-								Invite Bot <i class="ri-arrow-right-up-line"></i>
-							</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/support">
-								Support Server <i class="ri-arrow-right-up-line"></i>
-							</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i> <a class="scrollto" href="/#commands">Commands</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i> <a class="scrollto" href="/help-center">Help Center</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-lg-2 col-6 footer-links">
-					<h4>Find us online</h4>
-					<ul>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="https://top.gg/bot/887293151998529576">top.gg <i
-									class="ri-arrow-right-up-line"></i></a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank"
-								href="https://discord.com/application-directory/887293151998529576">discord.com <i
-									class="ri-arrow-right-up-line"></i></a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank"
-								href="https://discordbotlist.com/bots/dead-chat-reviver">discordbotlist.com <i
-									class="ri-arrow-right-up-line"></i></a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="https://discord.bots.gg/bots/887293151998529576">discord.bots.gg <i
-									class="ri-arrow-right-up-line"></i></a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-lg-2 col-6 footer-links">
-					<h4>Legal</h4>
-					<ul>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/legal/guidelines">Guidelines</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/legal/privacy">Privacy policy</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/legal/tos">Terms of Service</a>
-						</li>
-						<li>
-							<i class="bi bi-chevron-right"></i>
-							<a target="_blank" href="/legal/impressum">Impressum</a>
-						</li>
-					</ul>
-				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-cancel d-none" id="prev">Back</button>
+				<button class="btn btn-design" id="next">Let's Start <i class="bi bi-arrow-right-short"></i></button>
+				<a href="#" class="link-secondary ms-2" onclick="endOnboarding()">Skip Tutorial</a>
 			</div>
 		</div>
 	</div>
-
-	<div class="container">
-		<div class="copyright">
-			&copy; Copyright <strong><span>PoldisWeb</span></strong>. All Rights Reserved
+</div>
+	
+	<div class="position-fixed top-0 end-0 pe-3" style="z-index:9999;padding-top:5em;">
+	<div class="toast align-items-center text-white border-0" style="background-color:#e07f80;" role="alert" aria-live="assertive"
+		aria-atomic="true">
+		<div class="d-flex">
+			<div class="toast-body text-dark">
+				You were automatically added to the support server, to disable this, turn it of in your 
+				<a class="blue-a" style="text-decoration: underline;" href="/dashboard/user/1449374258873503796/settings">profile settings</a>.
+			</div>
+			<button type="button" class="btn-close me-2 m-auto" onclick="$('.toast').hide();" style="width: 5em;"></button>
 		</div>
 	</div>
+</div>
+
+		<main id="main" class="main ms-0">
+
+			<section class="section">
+				<div class="row mb-4">
+					<div class="col-auto mx-auto d-flex align-items-center">
+						<img src="https://cdn.discordapp.com/avatars/1449374258873503796/eba6c0e75ad5e1221a8b9dfea57080e8.png?size=1024"
+							width="130" style="border-radius: 2em" loading="lazy">
+						<div class="ms-4">
+							<h2 style="line-break: anywhere;">Welcome back, majhoul.gg!</h2>
+							Choose the server you want to configure!
+							<br><a href="/help-center">Need help?</a>
+						</div>
+					</div>
+				</div>
+
+				
+				
+				<div class="row" style="justify-content: center;">
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1134087725029539912/b755abc61af2c94b9f63ed6379b21942.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">𝐺𝐴𝑀𝐼𝑁𝐺  ᵛᵍˢ</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1134087725029539912" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1400386121313026158/45bf8096fc72489affdb3f827b928ae8.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">REX KINGDOM</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1400386121313026158" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1403094098033901598/ad0ced7a49f79c698ab7d96303487643.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Thunder Guild ・TG ᶜˡᵃⁿ</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1403094098033901598" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Members</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1410529324645355592" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1439729225912422533/508075d63797532e65c87936f52e6331.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Crew Template</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1439729225912422533" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1450187406153093333/25b20463345e66910f893f60afd271e8.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Blox core | Roblox - Services - Legit・Community</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1450187406153093333" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Info</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1450833987751772339" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1462045783691104260/049c216afe686cd76aeeba1ac18880b8.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Blitz</span>
+									
+										<a href="/dashboard/server/1462045783691104260" class="btn-design" style="float:right;">Configure</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1466104648522928149/f53ebfdb8dce11319b0d3332d1235581.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">BloxCore ঌ On Road ໒ • Trading &amp; Value</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1466104648522928149" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/icons/1472007504706797638/b62ffa67fd4d3d345f36fce969539e41.webp" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">Redline Rival community</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1472007504706797638" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">adversting</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1474778408075661545" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+						<div class="row p-0">
+							<div class="col-md-6 mx-auto p-0">
+								<div class="server-card">
+									<img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Server Avatar" class="server-avatar" style="float: left;">
+									<span class="change-server-name">᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻᲻GG᲻᲻᲻᲻᲻᲻᲻</span>
+									
+										<a href="https://discord.com/oauth2/authorize?client_id=887293151998529576&scope=bot%20applications.commands&permissions=478208&redirect_uri=https%3A%2F%2Fchat-reviver.com&response_type=code&guild_id=1506408346343968928" class="btn-design" style="float:right;">Invite</a>
+									
+								</div>
+							</div>
+						</div>
+					
+					
+				</div>
+			</section>
+
+		</main><!-- End #main -->
+		
+		<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+	<div class="copyright">
+		&copy; Copyright <strong><span>PoldisWeb</span></strong>. All Rights Reserved
+	</div>
+	<div class="credits">
+		Originally designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+		<br><br>
+		<a href="/legal/impressum" class="white-a"  target="_blank"><b>Impressum</b></a>
+	</div>
 </footer><!-- End Footer -->
-        </div>
-    </div>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center" title="Back to top"><i
-            class="bi bi-arrow-up-short"></i></a>
+		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+				class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="/assets/js/cookie-consent.js" type="module"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<!-- Vendor JS Files -->
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
+		<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="/assets/js/index.js"></script>
-    <script src="/assets/js/landingPageGSAP.js" type="module"></script>
-    <script>
-        tippy('[data-tippy-server]', {
-            content(reference) {
-                const id = reference.getAttribute('data-tippy-server');
-                const template = document.getElementById(id);
-                return template.innerHTML;
-            },
-            allowHTML: true,
-            theme: 'hero',
-            popperOptions: {
-                modifiers: [
-                    {
-                        name: 'computeStyles',
-                        options: {
-                            adaptive: false,
-                            gpuAcceleration: false,
-                        },
-                    },
-                    {
-                        name: 'preventOverflow',
-                        options: { boundary: 'viewport', escapeWithReference: false },
-                    },
-                ],
-            }
-        });</script>
-
+		<!-- Template Main JS File -->
+		<script src="/assets/js/dash.js"></script>
+		<script>
+			document.getElementById("toggle-sidebar-btn").click();
+			document.getElementById("toggle-sidebar-btn").style.display = "none";
+		</script>
+		
 </body>
 
 </html>
