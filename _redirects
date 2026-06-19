@@ -1,0 +1,3 @@
+/login/auth  https://discord.com/oauth2/authorize?client_id=1476324571664613396&redirect_uri=https%3A%2F%2Fultimate-bot.netlify.app%2Fcallback&response_type=code&scope=identify%20guilds  302
+/callback  /dashboard  302
+/* /index.html  200
