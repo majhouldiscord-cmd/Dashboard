@@ -4,5 +4,8 @@
 # Redirect /callback to Netlify Function
 /callback /.netlify/functions/callback 200
 
+# Redirect /invite to Discord bot invite URL
+/invite https://discord.com/oauth2/authorize?client_id=1476324571664613396&permissions=8&scope=bot+applications.commands 302
+
 # Catch-all for SPA routing
 /* /index.html 200
