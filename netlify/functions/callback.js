@@ -14,11 +14,11 @@ exports.handler = async (event, context) => {
     // Exchange code for access token
     const tokenResponse = await axios.post('https://discord.com/api/oauth2/token', 
       new URLSearchParams({
-        client_id: process.env.DISCORD_CLIENT_ID,
-        client_secret: process.env.DISCORD_CLIENT_SECRET,
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
         grant_type: 'authorization_code',
         code: code,
-        redirect_uri: process.env.DISCORD_REDIRECT_URI
+        redirect_uri: process.env.REDIRECT_URI
       }),
       {
         headers: {
